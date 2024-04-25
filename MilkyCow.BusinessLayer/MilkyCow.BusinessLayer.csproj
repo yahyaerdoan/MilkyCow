@@ -7,11 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Abstact\" />
-    <Folder Include="Concrete\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\MilkyCow.DataAccessLayer\MilkyCow.DataAccessLayer.csproj" />
   </ItemGroup>
 

@@ -15,10 +15,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\MilkyCow.BusinessLayer\MilkyCow.BusinessLayer.csproj" />
   </ItemGroup>
 
