@@ -3,15 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34202.233
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MilkyCow.WebApi", "MilkyCow.WebApi\MilkyCow.WebApi.csproj", "{183433E9-FCD0-40DE-A3E6-22161A18C19D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MilkyCow.WebApi", "MilkyCow.WebApi\MilkyCow.WebApi.csproj", "{183433E9-FCD0-40DE-A3E6-22161A18C19D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MilkyCow.EntityLayer", "MilkyCow.EntityLayer\MilkyCow.EntityLayer.csproj", "{F9D33C73-AB62-40D4-9595-5F4C41AC4870}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MilkyCow.EntityLayer", "MilkyCow.EntityLayer\MilkyCow.EntityLayer.csproj", "{F9D33C73-AB62-40D4-9595-5F4C41AC4870}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MilkyCow.DataAccessLayer", "MilkyCow.DataAccessLayer\MilkyCow.DataAccessLayer.csproj", "{BCD48A3C-E79E-4A01-BC73-FBC9F066919F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MilkyCow.DataAccessLayer", "MilkyCow.DataAccessLayer\MilkyCow.DataAccessLayer.csproj", "{BCD48A3C-E79E-4A01-BC73-FBC9F066919F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MilkyCow.BusinessLayer", "MilkyCow.BusinessLayer\MilkyCow.BusinessLayer.csproj", "{D8F4588F-F537-4E61-A102-D66A3AC066EA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MilkyCow.BusinessLayer", "MilkyCow.BusinessLayer\MilkyCow.BusinessLayer.csproj", "{D8F4588F-F537-4E61-A102-D66A3AC066EA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MilkyCow.DataTransferObjectLayer", "MilkyCow.DataTransferObjectLayer\MilkyCow.DataTransferObjectLayer.csproj", "{782CA6F0-3938-4B5A-9DAF-6444CBAA0E2A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MilkyCow.DataTransferObjectLayer", "MilkyCow.DataTransferObjectLayer\MilkyCow.DataTransferObjectLayer.csproj", "{782CA6F0-3938-4B5A-9DAF-6444CBAA0E2A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MilkyCow.WebUserInterfaceLayer", "MilkyCow.WebUserInterfaceLayer\MilkyCow.WebUserInterfaceLayer.csproj", "{8C78B1EA-FEDB-4B87-BB21-FCE6EB907D69}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{782CA6F0-3938-4B5A-9DAF-6444CBAA0E2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{782CA6F0-3938-4B5A-9DAF-6444CBAA0E2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{782CA6F0-3938-4B5A-9DAF-6444CBAA0E2A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C78B1EA-FEDB-4B87-BB21-FCE6EB907D69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C78B1EA-FEDB-4B87-BB21-FCE6EB907D69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C78B1EA-FEDB-4B87-BB21-FCE6EB907D69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C78B1EA-FEDB-4B87-BB21-FCE6EB907D69}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

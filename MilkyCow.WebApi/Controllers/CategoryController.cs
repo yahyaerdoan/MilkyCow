@@ -15,18 +15,38 @@ namespace MilkyCow.WebApi.Controllers
         {
             _categoryService = categoryService;
         }
-        [HttpGet]
+        [HttpGet("Categories/list")]
         public IActionResult CategoryList()
         {
             var values = _categoryService.GetAll();
             return Ok(values);
         }
 
-        [HttpPost]
+        [HttpPost("Category/Create")]
         public IActionResult CreateCategory(Category category)
         {
              _categoryService.Add(category);
             return Ok("Category added.");
+        }
+
+        [HttpDelete("Category/Delete")]
+        public IActionResult DeleteCategory(int id)
+        {
+            _categoryService.Delete(id);
+            return Ok("Category deleted.");
+        }
+
+        [HttpPut("Category/Update")]
+        public IActionResult UpdateCategory(Category category)
+        {
+            _categoryService.Update(category);
+            return Ok("Category updated.");
+        }
+        [HttpGet("Category/GetById")]
+        public IActionResult GetCategory(int id)
+        {
+           var values = _categoryService.GetById(id);
+            return Ok(values);
         }
     }
 }
