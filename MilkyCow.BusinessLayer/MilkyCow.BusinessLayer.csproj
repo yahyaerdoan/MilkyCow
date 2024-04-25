@@ -11,4 +11,8 @@
     <Folder Include="Concrete\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\MilkyCow.DataAccessLayer\MilkyCow.DataAccessLayer.csproj" />
+  </ItemGroup>
+
 </Project>

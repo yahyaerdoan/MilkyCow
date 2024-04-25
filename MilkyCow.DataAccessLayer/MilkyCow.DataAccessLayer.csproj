@@ -9,10 +9,12 @@
   <ItemGroup>
     <Folder Include="Abstact\IGenericRepository\" />
     <Folder Include="Abstact\IAbstractDal\" />
-    <Folder Include="Concrete\" />
-    <Folder Include="Concrete\Context\" />
     <Folder Include="Concrete\EntityFramework\" />
     <Folder Include="Concrete\GenericRepository\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MilkyCow.EntityLayer\MilkyCow.EntityLayer.csproj" />
   </ItemGroup>
 
 </Project>
