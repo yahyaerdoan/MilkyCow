@@ -1,0 +1,25 @@
+﻿@model MilkyCow.WebUserInterfaceLayer.Dtos.UpdateCategoryDto
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>UpdateCategory</title>
+</head>
+<body>
+    <form method="post">
+        <div class="container">
+            <input type="text" asp-for="CategoryId" class="form-control" readonly />
+            <input type="text" asp-for="Name" class="form-control" />
+            <input type="text" asp-for="Description" class="form-control" />
+            <button class="btn btn-primary">
+                Update Category
+            </button>
+        </div>
+    </form>
+</body>
+</html>

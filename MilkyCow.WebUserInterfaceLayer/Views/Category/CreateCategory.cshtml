@@ -1,0 +1,24 @@
+﻿@model MilkyCow.WebUserInterfaceLayer.Dtos.CreateCategoryDto
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>CreateCategory</title>
+</head>
+<body>
+    <form method="post">
+        <div class="container">
+            <input type="text" asp-for="Name" class="form-control"/>
+            <input type="text" asp-for="Description" class="form-control"/>
+            <button class="btn btn-primary">
+                Add Category
+            </button>
+        </div>
+    </form>
+</body>
+</html>
