@@ -1,0 +1,28 @@
+﻿@model MilkyCow.WebUserInterfaceLayer.Dtos.UpdateProductDto
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>UpdateCategory</title>
+</head>
+<body>
+    <form method="post">
+        <div class="container">
+            <input type="text" asp-for="ProductId" class="form-control" readonly />
+            <input type="text" asp-for="Name" class="form-control" />
+            <input type="text" asp-for="LastPrice" class="form-control" />
+            <input type="text" asp-for="NewPrice" class="form-control" />
+            <input type="text" asp-for="Image" class="form-control" />
+            <input type="text" asp-for="Status" class="form-control" />
+            <button class="btn btn-primary">
+                Update Category
+            </button>
+        </div>
+    </form>
+</body>
+</html>
