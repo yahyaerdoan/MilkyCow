@@ -18,5 +18,11 @@ namespace MilkyCow.DataAccessLayer.Concrete.EntityFramework
             var values =  _context.Products.Include(x=> x.Category).ToList();
             return values;
         }
+
+        public int GetProductCount()
+        {
+            var values = _context.Products.Count();
+            return values;
+        }
     }
 }

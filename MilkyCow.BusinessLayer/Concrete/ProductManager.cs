@@ -33,6 +33,11 @@ namespace MilkyCow.BusinessLayer.Concrete
             return _productDal.GetById(id);
         }
 
+        public int GetProductCount()
+        {
+            return _productDal.GetProductCount();
+        }
+
         public List<Product> GetProductWithCategory()
         {
             return _productDal.GetProductWithCategory();
