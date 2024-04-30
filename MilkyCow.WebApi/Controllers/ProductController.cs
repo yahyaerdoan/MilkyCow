@@ -46,5 +46,12 @@ namespace MilkyCow.WebApi.Controllers
            var values =  _productService.GetById(id);
             return Ok(values);
         }
+
+        [HttpGet("GetProductWithCategory")]
+        public ActionResult GetProductWithCategory()
+        {
+            var values = _productService.GetProductWithCategory();
+            return Ok(values);
+        }
     }
 }

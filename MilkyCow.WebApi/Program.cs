@@ -4,6 +4,7 @@ using MilkyCow.BusinessLayer.Concrete;
 using MilkyCow.DataAccessLayer.Abstact.IAbstractDal;
 using MilkyCow.DataAccessLayer.Concrete.Context;
 using MilkyCow.DataAccessLayer.Concrete.EntityFramework;
+using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,7 +20,10 @@ builder.Services.AddScoped<IProductDal, EfProductDal>();
 builder.Services.AddScoped<ISliderService, SliderManager>();
 builder.Services.AddScoped<ISliderDal, EfSliderDal>();
 
+builder.Services.AddControllersWithViews()
+    .AddJsonOptions(options => options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
 builder.Services.AddControllers();
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

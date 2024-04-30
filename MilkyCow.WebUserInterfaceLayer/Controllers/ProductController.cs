@@ -84,5 +84,18 @@ namespace MilkyCow.WebUserInterfaceLayer.Controllers
             }
             return View();
         }
+
+        public async Task<IActionResult> ProductList()
+        {
+            var client = _httpClientFactory.CreateClient();
+            var responseMessage = await client.GetAsync("https://localhost:44367/api/Product/GetProductWithCategory");
+            if (responseMessage.IsSuccessStatusCode)
+            {
+                var jonData = await responseMessage.Content.ReadAsStringAsync();
+                var values = JsonConvert.DeserializeObject<List<ResultProductWithCategoryDto>>(jonData);
+                return View(values);
+            }
+            return View();
+        }
     }
 }

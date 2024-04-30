@@ -10,5 +10,6 @@ namespace MilkyCow.BusinessLayer.Abstact.IAbstractService
 {
     public interface IProductService : IGenericService<Product>
     {
+        List<Product> GetProductWithCategory();
     }
 }

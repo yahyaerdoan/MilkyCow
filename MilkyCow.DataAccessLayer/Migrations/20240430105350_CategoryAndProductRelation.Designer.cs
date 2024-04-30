@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MilkyCow.DataAccessLayer.Concrete.Context;
 
@@ -11,9 +12,10 @@ using MilkyCow.DataAccessLayer.Concrete.Context;
 namespace MilkyCow.DataAccessLayer.Migrations
 {
     [DbContext(typeof(MilkyCowDbContext))]
-    partial class MilkyCowDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240430105350_CategoryAndProductRelation")]
+    partial class CategoryAndProductRelation
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

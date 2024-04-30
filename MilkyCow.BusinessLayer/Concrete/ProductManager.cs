@@ -33,6 +33,11 @@ namespace MilkyCow.BusinessLayer.Concrete
             return _productDal.GetById(id);
         }
 
+        public List<Product> GetProductWithCategory()
+        {
+            return _productDal.GetProductWithCategory();
+        }
+
         public void Update(Product entity)
         {
             _productDal.Update(entity);

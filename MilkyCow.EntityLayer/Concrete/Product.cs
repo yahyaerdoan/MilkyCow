@@ -15,5 +15,7 @@ namespace MilkyCow.EntityLayer.Concrete
 		public decimal NewPrice { get; set; }
         public string? Image { get; set; }
         public bool Status { get; set; }
-	}
+        public int? CategoryId { get; set; }
+        public Category Category { get; set; }
+    }
 }
