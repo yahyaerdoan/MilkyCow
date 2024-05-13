@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace MilkyCow.EntityLayer.Concrete
@@ -16,6 +17,7 @@ namespace MilkyCow.EntityLayer.Concrete
         public string? Image { get; set; }
         public bool Status { get; set; }
         public int? CategoryId { get; set; }
-        public Category Category { get; set; }
+        [JsonIgnore]
+        public virtual Category Category { get; set; }
     }
 }

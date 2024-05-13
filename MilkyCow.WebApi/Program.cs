@@ -41,6 +41,27 @@ app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
-app.MapControllers();
+app.MapControllers(); 
 
+app.MapGet("/MinimalApi", (IProductService _dbontext) =>
+{
+	return  _dbontext.GetAll().ToList();
+});
+
+app.MapGet("/MinimalApi/{id}", (string id, IProductService _dbontext) => {
+
+	if (!int.TryParse(id, out int productId) || productId <= 0)
+	{
+		return Results.BadRequest("Invalid ID format. ID must be a numeric value and a positive integer.");
+    }
+	var product = _dbontext.GetById(productId);
+	if (product != null)
+	{
+		return Results.Ok(product);
+	}
+	else
+	{
+        return Results.NotFound($"Product with ID {productId} not found.");
+    }
+});
 app.Run();
