@@ -1,9 +1,11 @@
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MilkyCow.BusinessLayer.Abstact.IAbstractService;
 using MilkyCow.BusinessLayer.Concrete;
 using MilkyCow.DataAccessLayer.Abstact.IAbstractDal;
 using MilkyCow.DataAccessLayer.Concrete.Context;
 using MilkyCow.DataAccessLayer.Concrete.EntityFramework;
+using MilkyCow.EntityLayer.Concrete;
 using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -43,12 +45,12 @@ app.UseAuthorization();
 
 app.MapControllers(); 
 
-app.MapGet("/MinimalApi", (IProductService _dbontext) =>
+app.MapGet("/MinimalApiProducts", (IProductService _dbontext) =>
 {
 	return  _dbontext.GetAll().ToList();
 });
 
-app.MapGet("/MinimalApi/{id}", (string id, IProductService _dbontext) => {
+app.MapGet("/MinimalApiProducts/{id}", (string id, IProductService _dbontext) => {
 
 	if (!int.TryParse(id, out int productId) || productId <= 0)
 	{
@@ -63,5 +65,55 @@ app.MapGet("/MinimalApi/{id}", (string id, IProductService _dbontext) => {
 	{
         return Results.NotFound($"Product with ID {productId} not found.");
     }
+});
+
+app.MapPost("/MinimalApiCreateProduct", (IProductService _post, Product product) =>
+{
+    _post.Add(product);
+
+    return Results.Ok(product);
+});
+
+app.MapPut("/MinimalApiUpdateProduct/{id}", (int id, IProductService _post, Product updatedProduct) =>
+{
+    var existingProduct = _post.GetById(id);
+    if (existingProduct == null)
+    {
+        return Results.BadRequest("Invalid product ID. Product does not exist.");
+    }
+    if (id != updatedProduct.ProductId)
+    {
+        return Results.BadRequest("Invalid category ID. Category does not match the product's category.");
+    }
+    _post.Update(existingProduct);
+    return Results.Ok(existingProduct);
+});
+
+app.MapDelete("/MinimalApiDeleteProduct/{id}", (int id, IProductService _post) =>
+{
+    var existingProduct = _post.GetById(id);
+    if (existingProduct == null)
+    {
+        return Results.BadRequest("Invalid product ID. Product does not exist.");
+    }
+    _post.Delete(existingProduct.ProductId);
+    return Results.Ok(existingProduct);
+});
+
+app.MapPost("/MinimalApiMultipleDeleteProducts/{ids}", (string ids, IProductService _post) =>
+{
+    // Split the comma-separated string of IDs into an array of integers
+    var idArray = ids.Split(',').Select(int.Parse).ToArray();
+
+    foreach (var id in idArray)
+    {
+        var existingProduct = _post.GetById(id);
+        if (existingProduct == null)
+        {
+            return Results.BadRequest($"Invalid product ID {id}. Product does not exist.");
+        }
+        _post.Delete(existingProduct.ProductId);
+    }
+    return Results.Ok($"Deleted product ID {ids}");
 });
 app.Run();
