@@ -39,13 +39,17 @@ namespace MilkyCow.WebUserInterfaceLayer.Controllers
             #endregion
 
             #region option 3
-            var baseUrl = _configuration["AppSettings:BaseApiUrl"];
+            //var baseUrl = _configuration["AppSettings:BaseApiUrl"];
 
-            var values = await _httpClientFactory.CreateClient()
-                .GetFromJsonAsync<List<ResultSliderDto>>($"{baseUrl}Sliders/GetAllSliders");
+            //var values = await _httpClientFactory.CreateClient()
+            //    .GetFromJsonAsync<List<ResultSliderDto>>($"{baseUrl}Sliders/GetAllSliders");
 
-            return View(values ?? new List<ResultSliderDto>());
+            //return View(values ?? new List<ResultSliderDto>());
             #endregion
+
+            var api1 = _configuration["AppSettings:BaseApiUrl"];
+            var values1 = await _httpClientFactory.CreateClient().GetFromJsonAsync<List<ResultSliderDto>>($"{api1}Sliders/GetAllSliders");
+            return View(values1 ?? new List<ResultSliderDto>());
         }
     }
 }
