@@ -1,0 +1,90 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+
+@await Component.InvokeAsync("LayoutHeadViewComponentPartial")
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;"></div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Topbar Start -->
+     @await Component.InvokeAsync("LayoutTopBarViewComponentPartial")
+    <!-- Topbar End -->
+
+
+    <!-- Navbar Start -->
+    @await Component.InvokeAsync("LayoutNavBarViewComponentPartial")
+    <!-- Navbar End -->
+  
+
+    <!-- Carousel Start -->
+    @await Component.InvokeAsync("LayoutSliderViewComponentPartial")
+    <!-- Carousel End -->
+   
+    <!-- About Start -->
+    @await Component.InvokeAsync("LayoutAboutViewComponentPartial")
+    <!-- About End -->
+ 
+
+    <!-- Features Start -->
+    @await Component.InvokeAsync("LayoutWhyUsViewComponentPartial")
+
+    <!-- Features End -->
+
+
+    <!-- Banner Start -->
+    @await Component.InvokeAsync("LayoutBannerViewComponentPartial")
+    <!-- Banner End -->
+
+
+    <!-- Service Start -->
+    @await Component.InvokeAsync("LayoutServiceViewComponentPartial")
+    <!-- Service End -->
+
+
+    <!-- Gallery Start -->
+    @await Component.InvokeAsync("LayoutGalleryViewComponentPartial")
+  
+    <!-- Gallery End -->
+
+
+    <!-- Product Start -->
+    @await Component.InvokeAsync("LayoutPoductViewComponentPartial")
+    <!-- Product End -->
+
+
+    <!-- Team Start -->
+    @await Component.InvokeAsync("LayoutTeamMemberViewComponentPartial")
+    <!-- Team End -->
+
+
+    <!-- Testimonial Start -->
+    @await Component.InvokeAsync("LayoutTestimonialViewComponentPartial")
+    <!-- Testimonial End -->
+
+
+    <!-- Footer Start -->
+    @await Component.InvokeAsync("LayoutFooterViewComponentPartial")
+    <!-- Footer End -->
+
+
+    <!-- Copyright Start -->
+    @await Component.InvokeAsync("LayoutCopyrightViewComponentPartial")
+    <!-- Copyright End -->
+
+    <!-- Script Start -->
+    @await Component.InvokeAsync("LayoutScriptViewComponentPartial")
+    <!-- Script End -->
+
+</body>
+
+</html>
