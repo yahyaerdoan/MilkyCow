@@ -11,4 +11,8 @@
     <Folder Include="Concrete\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\MilkyCow.EntityLayer\MilkyCow.EntityLayer.csproj" />
+  </ItemGroup>
+
 </Project>

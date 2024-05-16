@@ -16,6 +16,9 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MilkyCow.BusinessLayer\MilkyCow.BusinessLayer.csproj" />
+    <ProjectReference Include="..\MilkyCow.DataAccessLayer\MilkyCow.DataAccessLayer.csproj" />
+    <ProjectReference Include="..\MilkyCow.DataTransferObjectLayer\MilkyCow.DataTransferObjectLayer.csproj" />
+    <ProjectReference Include="..\MilkyCow.EntityLayer\MilkyCow.EntityLayer.csproj" />
   </ItemGroup>
 
 </Project>
