@@ -5,7 +5,7 @@
 }
 
 <!-- Page Header Start -->
-@await Component.InvokeAsync("PageHeaderViewComponentPartial", new { title = ViewData["Title"] as string })
+@await Component.InvokeAsync("PageHeaderViewComponentPartial", ViewData["Title"])
 <!-- Page Header End -->
 
 <!-- Team Start -->
