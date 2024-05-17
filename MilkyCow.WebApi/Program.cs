@@ -1,26 +1,20 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MilkyCow.BusinessLayer.Abstact.IAbstractService;
-using MilkyCow.BusinessLayer.Concrete;
+using MilkyCow.BusinessLayer.Concrete.ConcreteManager;
 using MilkyCow.DataAccessLayer.Abstact.IAbstractDal;
 using MilkyCow.DataAccessLayer.Concrete.Context;
 using MilkyCow.DataAccessLayer.Concrete.EntityFramework;
 using MilkyCow.EntityLayer.Concrete;
 using System.Text.Json.Serialization;
+using MilkyCow.BusinessLayer.Extentensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddDbContext<DbContext, MilkyCowDbContext>();
 
-builder.Services.AddScoped<ICategoryService, CategoryManager>();
-builder.Services.AddScoped<ICategoryDal, EfCategoryDal>();
-
-builder.Services.AddScoped<IProductService, ProductManager>();
-builder.Services.AddScoped<IProductDal, EfProductDal>();
-
-builder.Services.AddScoped<ISliderService, SliderManager>();
-builder.Services.AddScoped<ISliderDal, EfSliderDal>();
+builder.Services.ContainerDependencyInjection();
 
 builder.Services.AddControllersWithViews()
     .AddJsonOptions(options => options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);

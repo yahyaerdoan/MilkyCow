@@ -3,7 +3,7 @@ using MilkyCow.EntityLayer.Concrete;
 
 namespace MilkyCow.BusinessLayer.Abstact.IAbstractService
 {
-    public interface ISliderService : IGenericService<Slider>
+    public interface ITeamMemberSocialMediaService : IGenericService<TeamMemberSocialMedia>
     {
-    }       
+    }
 }

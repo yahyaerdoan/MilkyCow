@@ -2,7 +2,7 @@
 using MilkyCow.DataAccessLayer.Abstact.IAbstractDal;
 using MilkyCow.EntityLayer.Concrete;
 
-namespace MilkyCow.BusinessLayer.Concrete
+namespace MilkyCow.BusinessLayer.Concrete.ConcreteManager
 {
     public class ProductManager : IProductService
     {

@@ -2,7 +2,7 @@
 using MilkyCow.DataAccessLayer.Abstact.IAbstractDal;
 using MilkyCow.EntityLayer.Concrete;
 
-namespace MilkyCow.BusinessLayer.Concrete
+namespace MilkyCow.BusinessLayer.Concrete.ConcreteManager
 {
     public class CategoryManager : ICategoryService
     {
@@ -20,12 +20,12 @@ namespace MilkyCow.BusinessLayer.Concrete
 
         public void Delete(int id)
         {
-           _categoryDal.Delete(id);
+            _categoryDal.Delete(id);
         }
 
         public List<Category> GetAll()
         {
-           return _categoryDal.GetAll();
+            return _categoryDal.GetAll();
         }
 
         public Category GetById(int id)

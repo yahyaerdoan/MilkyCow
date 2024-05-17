@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MilkyCow.BusinessLayer.Concrete
+namespace MilkyCow.BusinessLayer.Concrete.ConcreteManager
 {
     public class SliderManager : ISliderService
     {
@@ -35,7 +35,7 @@ namespace MilkyCow.BusinessLayer.Concrete
 
         public Slider GetById(int id)
         {
-           return _sliderDal.GetById(id);
+            return _sliderDal.GetById(id);
         }
 
         public void Update(Slider entity)
