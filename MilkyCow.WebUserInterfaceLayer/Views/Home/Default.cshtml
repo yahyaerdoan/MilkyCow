@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewData["Title"] = "Default";
+    Layout = "~/Views/Layout/Index.cshtml";
+}
+
+<!-- Carousel Start -->
+@await Component.InvokeAsync("LayoutSliderViewComponentPartial")
+<!-- Carousel End -->
+
+<!-- About Start -->
+@await Component.InvokeAsync("LayoutAboutViewComponentPartial")
+<!-- About End -->
+
+<!-- Features Start -->
+@await Component.InvokeAsync("LayoutWhyUsViewComponentPartial")
+<!-- Features End -->
+
+<!-- Banner Start -->
+@await Component.InvokeAsync("LayoutBannerViewComponentPartial")
+<!-- Banner End -->
+
+<!-- Service Start -->
+@await Component.InvokeAsync("LayoutServiceViewComponentPartial")
+<!-- Service End -->
+
+<!-- Gallery Start -->
+@await Component.InvokeAsync("LayoutGalleryViewComponentPartial")
+<!-- Gallery End -->
+
+<!-- Product Start -->
+@await Component.InvokeAsync("LayoutPoductViewComponentPartial")
+<!-- Product End -->
+
+<!-- Team Start -->
+@await Component.InvokeAsync("LayoutTeamMemberViewComponentPartial")
+<!-- Team End -->
+
+<!-- Testimonial Start -->
+@await Component.InvokeAsync("LayoutTestimonialViewComponentPartial")
+<!-- Testimonial End -->

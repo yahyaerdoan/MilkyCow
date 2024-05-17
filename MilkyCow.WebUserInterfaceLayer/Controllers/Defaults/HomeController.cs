@@ -4,7 +4,7 @@ namespace MilkyCow.WebUserInterfaceLayer.Controllers.Defaults
 {
     public class HomeController : Controller
     {
-        public IActionResult Index()
+        public IActionResult Default()
         {
             return View();
         }

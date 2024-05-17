@@ -5,11 +5,11 @@ using System.Text;
 
 namespace MilkyCow.WebUserInterfaceLayer.Controllers
 {
-    public class ProductController : Controller
+    public class ProductPController : Controller
     {
         private readonly IHttpClientFactory _httpClientFactory;
 
-        public ProductController(IHttpClientFactory httpClientFactory)
+        public ProductPController(IHttpClientFactory httpClientFactory)
         {
             _httpClientFactory = httpClientFactory;
         }
