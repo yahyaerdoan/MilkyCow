@@ -16,11 +16,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Areas\" />
-    <Folder Include="Areas\MilkyAdmin\Controllers\" />
     <Folder Include="Areas\MilkyAdmin\Data\" />
     <Folder Include="Areas\MilkyAdmin\Models\" />
-    <Folder Include="Areas\MilkyAdmin\Views\" />
   </ItemGroup>
 
 </Project>
