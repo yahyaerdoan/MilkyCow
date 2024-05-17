@@ -13,7 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MilkyCow.BusinessLayer", "M
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MilkyCow.DataTransferObjectLayer", "MilkyCow.DataTransferObjectLayer\MilkyCow.DataTransferObjectLayer.csproj", "{782CA6F0-3938-4B5A-9DAF-6444CBAA0E2A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MilkyCow.WebUserInterfaceLayer", "MilkyCow.WebUserInterfaceLayer\MilkyCow.WebUserInterfaceLayer.csproj", "{8C78B1EA-FEDB-4B87-BB21-FCE6EB907D69}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MilkyCow.WebUserInterfaceLayer", "MilkyCow.WebUserInterfaceLayer\MilkyCow.WebUserInterfaceLayer.csproj", "{8C78B1EA-FEDB-4B87-BB21-FCE6EB907D69}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MilkyCow.MinimalApi", "MinimalApi\MilkyCow.MinimalApi.csproj", "{9E29B5A9-1A1A-463C-9422-5111F308A7DA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{8C78B1EA-FEDB-4B87-BB21-FCE6EB907D69}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8C78B1EA-FEDB-4B87-BB21-FCE6EB907D69}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8C78B1EA-FEDB-4B87-BB21-FCE6EB907D69}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E29B5A9-1A1A-463C-9422-5111F308A7DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E29B5A9-1A1A-463C-9422-5111F308A7DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E29B5A9-1A1A-463C-9422-5111F308A7DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E29B5A9-1A1A-463C-9422-5111F308A7DA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
