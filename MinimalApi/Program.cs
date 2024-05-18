@@ -3,6 +3,7 @@ using MilkyCow.BusinessLayer.Extentensions;
 using Microsoft.EntityFrameworkCore;
 using MilkyCow.DataAccessLayer.Concrete.Context;
 using Microsoft.OpenApi.Models;
+using MilkyCow.MinimalApi.Extensions.EndpointExtensions;
 
 var builder = WebApplication.CreateBuilder(args);
 #region Swagger
@@ -32,5 +33,6 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 #endregion
 
-app.MapProductEndpoints();
+// Use the centralized method to map all endpoints
+app.MapAllEndpoints();
 app.Run();
