@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34202.233
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MilkyCow.WebApi", "MilkyCow.WebApi\MilkyCow.WebApi.csproj", "{183433E9-FCD0-40DE-A3E6-22161A18C19D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MilkyCow.RestfulApi", "MilkyCow.WebApi\MilkyCow.RestfulApi.csproj", "{183433E9-FCD0-40DE-A3E6-22161A18C19D}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MilkyCow.EntityLayer", "MilkyCow.EntityLayer\MilkyCow.EntityLayer.csproj", "{F9D33C73-AB62-40D4-9595-5F4C41AC4870}"
 EndProject
@@ -15,7 +15,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MilkyCow.DataTransferObject
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MilkyCow.WebUserInterfaceLayer", "MilkyCow.WebUserInterfaceLayer\MilkyCow.WebUserInterfaceLayer.csproj", "{8C78B1EA-FEDB-4B87-BB21-FCE6EB907D69}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MilkyCow.MinimalApi", "MinimalApi\MilkyCow.MinimalApi.csproj", "{9E29B5A9-1A1A-463C-9422-5111F308A7DA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MilkyCow.MinimalApi", "MinimalApi\MilkyCow.MinimalApi.csproj", "{9E29B5A9-1A1A-463C-9422-5111F308A7DA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
