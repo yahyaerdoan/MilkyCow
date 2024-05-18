@@ -1,11 +1,16 @@
 ﻿using MilkyCow.BusinessLayer.Abstact.IAbstractService;
 using MilkyCow.EntityLayer.Concrete;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace MilkyCow.BusinessLayer.Concrete.ConcreteManager
 {
-    public class WhyUsDetailManager : IWhyUsDetailService
+    public class BannerManager : IBannerService
     {
-        public void Add(WhyUsDetail entity)
+        public void Add(Banner entity)
         {
             throw new NotImplementedException();
         }
@@ -15,17 +20,17 @@ namespace MilkyCow.BusinessLayer.Concrete.ConcreteManager
             throw new NotImplementedException();
         }
 
-        public List<WhyUsDetail> GetAll()
+        public List<Banner> GetAll()
         {
             throw new NotImplementedException();
         }
 
-        public WhyUsDetail GetById(int id)
+        public Banner GetById(int id)
         {
             throw new NotImplementedException();
         }
 
-        public void Update(WhyUsDetail entity)
+        public void Update(Banner entity)
         {
             throw new NotImplementedException();
         }

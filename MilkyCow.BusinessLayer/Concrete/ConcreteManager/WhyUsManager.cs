@@ -1,8 +1,9 @@
-﻿using MilkyCow.EntityLayer.Concrete;
+﻿using MilkyCow.BusinessLayer.Abstact.IAbstractService;
+using MilkyCow.EntityLayer.Concrete;
 
 namespace MilkyCow.BusinessLayer.Concrete.ConcreteManager
 {
-    public class WhyUsManager : IWhyUsDal
+    public class WhyUsManager : IWhyUsService
     {
         public void Add(WhyUs entity)
         {
