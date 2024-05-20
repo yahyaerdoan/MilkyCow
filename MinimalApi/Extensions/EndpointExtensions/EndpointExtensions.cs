@@ -4,11 +4,12 @@ namespace MilkyCow.MinimalApi.Extensions.EndpointExtensions
 {
     public static class EndpointExtensions
     {
-        public static void MapProductEndpoints(this IEndpointRouteBuilder endpoints)
+        public static void MapAllEndpoints(this IEndpointRouteBuilder endpoints)
         {
-            var productEndpointMapper = endpoints.ServiceProvider.GetRequiredService<ProductEndpoints>();
-            productEndpointMapper.MapEndpoints(endpoints);
+            endpoints.MapProductEndpoints();
+            // Add calls to other endpoint mapping methods here, e.g.:
+            // endpoints.MapOrderEndpoints();
+            // endpoints.MapCustomerEndpoints();
         }
-    }
     }
 }

@@ -16,7 +16,6 @@ builder.Services.AddSwaggerGen(c =>
 
 builder.Services.AddDbContext<DbContext, MilkyCowDbContext>();
 builder.Services.ContainerDependencyInjection();
-builder.Services.AddSingleton<ProductEndpoints>();
 
 
 
@@ -35,9 +34,5 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 #endregion
 
-// Use the extension method to map product endpoints
-app.UseEndpoints(endpoints =>
-{
-    endpoints.MapProductEndpoints();
-});
+app.MapAllEndpoints();
 app.Run();
