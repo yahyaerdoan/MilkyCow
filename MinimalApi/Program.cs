@@ -4,6 +4,9 @@ using Microsoft.EntityFrameworkCore;
 using MilkyCow.DataAccessLayer.Concrete.Context;
 using Microsoft.OpenApi.Models;
 using MilkyCow.MinimalApi.Extensions.EndpointExtensions;
+using MilkyCow.MinimalApi.Endpoints.CategoryEndpoints;
+using MilkyCow.BusinessLayer.Abstact.IAbstractService;
+using MilkyCow.BusinessLayer.Concrete.ConcreteManager;
 
 var builder = WebApplication.CreateBuilder(args);
 #region Swagger
@@ -16,6 +19,9 @@ builder.Services.AddSwaggerGen(c =>
 
 builder.Services.AddDbContext<DbContext, MilkyCowDbContext>();
 builder.Services.ContainerDependencyInjection();
+//builder.Services.AddSingleton<IProductService, ProductManager>();
+
+builder.Services.AddTransient<CategoryEndpoints>();
 
 
 
@@ -34,5 +40,7 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 #endregion
 
+app.UseRouting();
 app.MapAllEndpoints();
+
 app.Run();

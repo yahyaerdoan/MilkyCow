@@ -1,4 +1,5 @@
-﻿using MinimalApi.Endpoints.ProductEndpoints;
+﻿using MilkyCow.MinimalApi.Endpoints.CategoryEndpoints;
+using MinimalApi.Endpoints.ProductEndpoints;
 
 namespace MilkyCow.MinimalApi.Extensions.EndpointExtensions
 {
@@ -13,3 +14,4 @@ namespace MilkyCow.MinimalApi.Extensions.EndpointExtensions
         }
     }
 }
+ 
