@@ -19,7 +19,8 @@ namespace MilkyCow.WebUserInterfaceLayer.Extensions.DynamicBaseConsume
         public async Task<List<TEntity>> GetListAsync(string link)
         {
             var configuration  = _configuration["AppSettings:BaseApiUrl"];
-            var response = await _httpClientFactory.CreateClient().GetFromJsonAsync<List<TEntity>>($"https://localhost:44367/api/{link}");
+            var response = await _httpClientFactory.CreateClient().GetFromJsonAsync<List<TEntity>>($"{configuration}/{link}");
+            Console.WriteLine($"Complete URL: {response}");
             return (response ?? new List<TEntity>());
         }
         public async Task<TEntity> GetById(int id, string link)
@@ -33,9 +34,9 @@ namespace MilkyCow.WebUserInterfaceLayer.Extensions.DynamicBaseConsume
         {
             var configuration = _configuration["AppSettings:BaseApiUrl"];
             var client = _httpClientFactory.CreateClient();
-            var jsonData = JsonConvert.SerializeObject(classDto);
-            var content = new StringContent(jsonData, Encoding.UTF8, "application/json");
-            var responseMessage = await client.PostAsync($"{configuration}/{link}", content);
+            //var jsonData = JsonConvert.SerializeObject(classDto);
+            //var content = new StringContent(jsonData, Encoding.UTF8, "application/json");
+            var responseMessage = await client.PostAsJsonAsync($"{configuration}/{link}", classDto);
             if (responseMessage.IsSuccessStatusCode)
             {
                 return 1;
