@@ -4,12 +4,12 @@ using Newtonsoft.Json;
 
 namespace MilkyCow.WebUserInterfaceLayer.Controllers
 {
-    public class SliderPController : Controller
+    public class SliderController : Controller
     {
         private readonly IHttpClientFactory _httpClientFactory;
         private readonly IConfiguration _configuration;
 
-        public SliderPController(IHttpClientFactory httpClientFactory, IConfiguration configuration)
+        public SliderController(IHttpClientFactory httpClientFactory, IConfiguration configuration)
         {
             _httpClientFactory = httpClientFactory;
             _configuration = configuration;

@@ -22,10 +22,10 @@ namespace MilkyCow.WebUserInterfaceLayer.Extensions.DynamicBaseConsume
             var response = await _httpClientFactory.CreateClient().GetFromJsonAsync<List<TEntity>>($"{configuration}/{link}");
             return (response ?? new List<TEntity>());
         }
-        public async Task<TEntity> GetById(int id, string link)
+        public async Task<TEntity> GetByIdAsync(string link, int id)
         {
             var configuration = _configuration["AppSettings:BaseApiUrl"];
-            var response = await _httpClientFactory.CreateClient().GetFromJsonAsync<TEntity>($"{configuration}/{link}");
+            var response = await _httpClientFactory.CreateClient().GetFromJsonAsync<TEntity>($"{configuration}/{link}/" + id);
             return response ?? null;
         }
 
@@ -53,7 +53,7 @@ namespace MilkyCow.WebUserInterfaceLayer.Extensions.DynamicBaseConsume
             return 0;
         }
 
-        public async Task<int> DeleteAsync(int id, string link)
+        public async Task<int> DeleteAsync(string link, int id)
         {
             var configuration = _configuration["AppSettings:BaseApiUrl"];
             var responseMessage = await _httpClientFactory.CreateClient().DeleteAsync($"{configuration}/{link}/{id}");

@@ -5,11 +5,11 @@ using System.Text;
 
 namespace MilkyCow.WebUserInterfaceLayer.Controllers
 {
-    public class CategoryPController : Controller
+    public class CategoryController : Controller
     {
         private readonly IHttpClientFactory _httpClientFactory;
 
-        public CategoryPController(IHttpClientFactory httpClientFactory)
+        public CategoryController(IHttpClientFactory httpClientFactory)
         {
             _httpClientFactory = httpClientFactory;
         }
@@ -17,7 +17,7 @@ namespace MilkyCow.WebUserInterfaceLayer.Controllers
         public async Task<IActionResult> Index()
         {
             var client = _httpClientFactory.CreateClient();
-            var responseMessage = await client.GetAsync("https://localhost:44367/api/Category/Categories/list");
+            var responseMessage = await client.GetAsync("https://localhost:7032/api/Category/Categories/list");
             if (responseMessage.IsSuccessStatusCode)
             {
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();
@@ -39,7 +39,7 @@ namespace MilkyCow.WebUserInterfaceLayer.Controllers
             var client = _httpClientFactory.CreateClient();
             var jsonData = JsonConvert.SerializeObject(createCategoryDto);
             StringContent content = new StringContent(jsonData, Encoding.UTF8, "application/json");
-            var responseMessage = await client.PostAsync("https://localhost:44367/api/Category/Category/Create", content);
+            var responseMessage = await client.PostAsync("https://localhost:7032/api/Category/Category/Create", content);
             if (responseMessage.IsSuccessStatusCode)
             {
                 return RedirectToAction("Index");
@@ -51,7 +51,7 @@ namespace MilkyCow.WebUserInterfaceLayer.Controllers
         public async Task<IActionResult> DeleteCategory(int id)
         {
             var client = _httpClientFactory.CreateClient();       
-            var responseMessage = await client.DeleteAsync("https://localhost:44367/api/Category/Category/Delete?id=" + id);
+            var responseMessage = await client.DeleteAsync("https://localhost:7032/api/Category/Category/Delete?id=" + id);
             if (responseMessage.IsSuccessStatusCode)
             {
                 return RedirectToAction("Index");
@@ -63,7 +63,7 @@ namespace MilkyCow.WebUserInterfaceLayer.Controllers
         public async Task<IActionResult> UpdateCategory(int id)
         {
             var client = _httpClientFactory.CreateClient();        
-            var responseMessage = await client.GetAsync("https://localhost:44367/api/Category/Category/GetById?id=" + id);
+            var responseMessage = await client.GetAsync("https://localhost:7032/api/Category/Category/GetById?id=" + id);
             if (responseMessage.IsSuccessStatusCode)
             {
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();
@@ -79,7 +79,7 @@ namespace MilkyCow.WebUserInterfaceLayer.Controllers
             var client = _httpClientFactory.CreateClient();
             var jsonData = JsonConvert.SerializeObject(updateCategoryDto);
             StringContent content = new StringContent(jsonData, Encoding.UTF8, "application/json");
-            var responseMessage = await client.PutAsync("https://localhost:44367/api/Category/Category/Update", content);
+            var responseMessage = await client.PutAsync("https://localhost:7032/api/Category/Category/Update", content);
             if (responseMessage.IsSuccessStatusCode)
             {
                 return RedirectToAction("Index");

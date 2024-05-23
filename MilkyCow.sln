@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34202.233
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MilkyCow.RestfulApi", "MilkyCow.WebApi\MilkyCow.RestfulApi.csproj", "{183433E9-FCD0-40DE-A3E6-22161A18C19D}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MilkyCow.EntityLayer", "MilkyCow.EntityLayer\MilkyCow.EntityLayer.csproj", "{F9D33C73-AB62-40D4-9595-5F4C41AC4870}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MilkyCow.DataAccessLayer", "MilkyCow.DataAccessLayer\MilkyCow.DataAccessLayer.csproj", "{BCD48A3C-E79E-4A01-BC73-FBC9F066919F}"
@@ -17,16 +15,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MilkyCow.WebUserInterfaceLa
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MilkyCow.MinimalApi", "MinimalApi\MilkyCow.MinimalApi.csproj", "{9E29B5A9-1A1A-463C-9422-5111F308A7DA}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MilkyCow.RestfulApiLayer", "MilkyCow.RestfulApiLayer\MilkyCow.RestfulApiLayer.csproj", "{3C6A134C-2870-4119-A308-4A115D601792}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{183433E9-FCD0-40DE-A3E6-22161A18C19D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{183433E9-FCD0-40DE-A3E6-22161A18C19D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{183433E9-FCD0-40DE-A3E6-22161A18C19D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{183433E9-FCD0-40DE-A3E6-22161A18C19D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F9D33C73-AB62-40D4-9595-5F4C41AC4870}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F9D33C73-AB62-40D4-9595-5F4C41AC4870}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F9D33C73-AB62-40D4-9595-5F4C41AC4870}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -51,6 +47,10 @@ Global
 		{9E29B5A9-1A1A-463C-9422-5111F308A7DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9E29B5A9-1A1A-463C-9422-5111F308A7DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9E29B5A9-1A1A-463C-9422-5111F308A7DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C6A134C-2870-4119-A308-4A115D601792}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C6A134C-2870-4119-A308-4A115D601792}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C6A134C-2870-4119-A308-4A115D601792}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C6A134C-2870-4119-A308-4A115D601792}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
