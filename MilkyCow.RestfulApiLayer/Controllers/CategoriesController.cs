@@ -19,8 +19,14 @@ namespace MilkyCow.RestfulApiLayer.Controllers
         [HttpGet("CategoryList")]
         public IActionResult CategoryList()
         {
-            var values = _categoryService.GetAll();
-            return Ok(values);
+            var categories = _categoryService.GetAll();
+            var categoryDtos = categories.Select(category => new ResultCategoryDto
+            {
+                CategoryId = category.CategoryId,
+                Name = category.Name,
+                Description = category.Description,
+            }).ToList();
+            return Ok(categoryDtos);
         }
 
         [HttpPost("CreateCategory")]
