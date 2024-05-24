@@ -8,16 +8,6 @@
 
   <ItemGroup>
     <Folder Include="Abstact\" />
-    <Folder Include="Concrete\GalleryDtos\" />
-    <Folder Include="Concrete\MessageDtos\" />
-    <Folder Include="Concrete\WhyUsDetailDtos\" />
-    <Folder Include="Concrete\WhyUsDtos\" />
-    <Folder Include="Concrete\TestimonialDtos\" />
-    <Folder Include="Concrete\TeamMemberSocialMediaDtos\" />
-    <Folder Include="Concrete\TeamMemberDtos\" />
-    <Folder Include="Concrete\SocialMediaDtos\" />
-    <Folder Include="Concrete\ServiceTypeDtos\" />
-    <Folder Include="Concrete\OurServiceDtos\" />
   </ItemGroup>
 
   <ItemGroup>
