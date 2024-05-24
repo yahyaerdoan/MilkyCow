@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using MilkyCow.WebUserInterfaceLayer.Dtos;
+using MilkyCow.DataTransferObjectLayer.Concrete.SliderDtos;
 using Newtonsoft.Json;
 
 namespace MilkyCow.WebUserInterfaceLayer.Controllers

@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using MilkyCow.WebUserInterfaceLayer.Dtos;
+using MilkyCow.DataTransferObjectLayer.Concrete.CategoryDtos;
 using Newtonsoft.Json;
 using System.Text;
 

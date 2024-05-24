@@ -1,5 +1,4 @@
-﻿using MilkyCow.WebUserInterfaceLayer.Dtos;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using System.Configuration;
 using System.Text;
 

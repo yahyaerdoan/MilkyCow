@@ -8,7 +8,6 @@
 
   <ItemGroup>
     <Folder Include="Abstact\" />
-    <Folder Include="Concrete\" />
   </ItemGroup>
 
   <ItemGroup>

@@ -12,6 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\MilkyCow.DataTransferObjectLayer\MilkyCow.DataTransferObjectLayer.csproj" />
     <ProjectReference Include="..\MilkyCow.EntityLayer\MilkyCow.EntityLayer.csproj" />
   </ItemGroup>
 

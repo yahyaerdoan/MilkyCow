@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using MilkyCow.WebUserInterfaceLayer.Dtos;
+using MilkyCow.DataTransferObjectLayer.Concrete.CategoryDtos;
 using MilkyCow.WebUserInterfaceLayer.Extensions.DynamicBaseConsume;
 using Newtonsoft.Json.Linq;
 
@@ -25,7 +25,7 @@ namespace MilkyCow.WebUserInterfaceLayer.Areas.MilkyAdmin.Controllers.Default
 
         public async Task<IActionResult> Index()
         {
-            var values = await _resultCategoryDto.GetListAsync("Category/CategoryList");
+            var values = await _resultCategoryDto.GetListAsync("Categories/CategoryList");
             return View(values);
         }
 
@@ -39,7 +39,7 @@ namespace MilkyCow.WebUserInterfaceLayer.Areas.MilkyAdmin.Controllers.Default
         [HttpPost]
         public async Task<IActionResult> CreateCategory(CreateCategoryDto createCategoryDto)
         {
-            var values = await _createCategoryDto.PostAsync("Category/CreateCategory", createCategoryDto);
+            var values = await _createCategoryDto.PostAsync("Categories/CreateCategory", createCategoryDto);
             if (values > 0)
             {
                 return RedirectToAction("Index");
@@ -50,7 +50,7 @@ namespace MilkyCow.WebUserInterfaceLayer.Areas.MilkyAdmin.Controllers.Default
         [HttpGet]
         public async Task<IActionResult> UpdateCategory(int id)
         {
-            var values = await _updateCategoryDto.GetByIdAsync("Category/GetCategory",id);            
+            var values = await _updateCategoryDto.GetByIdAsync("Categories/GetCategory", id);            
             return View(values);
         }
 
@@ -58,7 +58,7 @@ namespace MilkyCow.WebUserInterfaceLayer.Areas.MilkyAdmin.Controllers.Default
         [HttpPost]
         public async Task<IActionResult> UpdateCategory(UpdateCategoryDto updateCategoryDto)
         {
-            var values = await _createCategoryDto.PutAsync("Category/UpdateCategory", updateCategoryDto);
+            var values = await _createCategoryDto.PutAsync("Categories/UpdateCategory", updateCategoryDto);
             if (values > 0)
             {
                 return RedirectToAction("Index");
@@ -69,7 +69,7 @@ namespace MilkyCow.WebUserInterfaceLayer.Areas.MilkyAdmin.Controllers.Default
  
         public async Task<IActionResult> DeleteCategory(int id)
         {
-          var values = await _object.DeleteAsync("Category/DeleteCategory", id);
+          var values = await _object.DeleteAsync("Categories/DeleteCategory", id);
             if (values > 0)
             {
                 return RedirectToAction("Index");

@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using MilkyCow.WebUserInterfaceLayer.Dtos;
+using MilkyCow.DataTransferObjectLayer.Concrete.ProductDtos;
 using Newtonsoft.Json;
 using System.Text;
 
@@ -33,7 +33,7 @@ namespace MilkyCow.WebUserInterfaceLayer.Controllers
             return View();
         }
         [HttpPost]
-        public async Task<IActionResult> CreateProduct(CreatePoductDto createPoductDto)
+        public async Task<IActionResult> CreateProduct(CreateProductDto createPoductDto)
         {
             var client = _httpClientFactory.CreateClient();
             var jsonData = JsonConvert.SerializeObject(createPoductDto);
@@ -92,7 +92,7 @@ namespace MilkyCow.WebUserInterfaceLayer.Controllers
             if (responseMessage.IsSuccessStatusCode)
             {
                 var jonData = await responseMessage.Content.ReadAsStringAsync();
-                var values = JsonConvert.DeserializeObject<List<ResultProductWithCategoryDto>>(jonData);
+                var values = JsonConvert.DeserializeObject<List<ResultProductDto>>(jonData);
                 return View(values);
             }
             return View();
