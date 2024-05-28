@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using MilkyCow.DataTransferObjectLayer.Concrete.AboutUsDtos;
+using MilkyCow.DataTransferObjectLayer.Concrete.AddressDtos;
 using MilkyCow.EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
@@ -14,6 +15,12 @@ namespace MilkyCow.DataTransferObjectLayer.AutoMapper.EntityDtoMappers
 		public MappingProfile()
 		{
 			CreateMap<AboutUs, CreateAboutUsDto>().ReverseMap();
+			CreateMap<AboutUs, UpdateAboutUsDto>().ReverseMap();
+			CreateMap<AboutUs, ResultAboutUsDto>().ReverseMap();
+
+			CreateMap<Address, CreateAddressDto>().ReverseMap();
+			CreateMap<Address, UpdateAddressDto>().ReverseMap();
+			CreateMap<Address, ResultAddressDto>().ReverseMap();
 		}
 	}
 }

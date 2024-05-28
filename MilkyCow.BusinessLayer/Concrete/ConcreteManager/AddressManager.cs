@@ -1,33 +1,43 @@
 ﻿using MilkyCow.BusinessLayer.Abstact.IAbstractService;
+using MilkyCow.DataAccessLayer.Abstact.IAbstractDal;
 using MilkyCow.EntityLayer.Concrete;
 
 namespace MilkyCow.BusinessLayer.Concrete.ConcreteManager
 {
     public class AddressManager : IAddressService
     {
-        public void Add(Address entity)
+        private readonly IAddressDal _addressDal;
+
+		public AddressManager(IAddressDal addressDal)
+		{
+			_addressDal = addressDal;
+		}
+
+		public void Add(Address entity)
         {
-            throw new NotImplementedException();
+            _addressDal.Add(entity);
         }
 
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            _addressDal.Delete(id);
         }
 
         public List<Address> GetAll()
         {
-            throw new NotImplementedException();
+            var values = _addressDal.GetAll();
+            return values;
         }
 
         public Address GetById(int id)
         {
-            throw new NotImplementedException();
+            var values = _addressDal.GetById(id);
+            return values;
         }
 
         public void Update(Address entity)
         {
-            throw new NotImplementedException();
+            _addressDal.Update(entity);
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using MilkyCow.BusinessLayer.Abstact.IAbstractService;
+using MilkyCow.DataAccessLayer.Abstact.IAbstractDal;
 using MilkyCow.EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
@@ -10,29 +11,38 @@ namespace MilkyCow.BusinessLayer.Concrete.ConcreteManager
 {
     public class AboutUsManager : IAboutUsService
     {
-        public void Add(AboutUs entity)
+        private readonly IAboutUsDal _aboutUsDal;
+
+		public AboutUsManager(IAboutUsDal aboutUsDal)
+		{
+			_aboutUsDal = aboutUsDal;
+		}
+
+		public void Add(AboutUs entity)
         {
-            throw new NotImplementedException();
+            _aboutUsDal.Add(entity);
         }
 
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            _aboutUsDal.Delete(id);
         }
 
         public List<AboutUs> GetAll()
         {
-            throw new NotImplementedException();
+            var values = _aboutUsDal.GetAll();  
+            return values;
         }
 
         public AboutUs GetById(int id)
         {
-            throw new NotImplementedException();
+            var values = _aboutUsDal.GetById(id);
+            return values;
         }
 
         public void Update(AboutUs entity)
         {
-            throw new NotImplementedException();
+            _aboutUsDal.Update(entity);
         }
     }
 }
