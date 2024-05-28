@@ -2,13 +2,15 @@ using Microsoft.EntityFrameworkCore;
 using MilkyCow.DataAccessLayer.Concrete.Context;
 using System.Text.Json.Serialization;
 using MilkyCow.BusinessLayer.Extentensions;
-
+using MilkyCow.DataTransferObjectLayer.AutoMapper.EntityDtoMappers;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddDbContext<DbContext, MilkyCowDbContext>();
 builder.Services.ContainerDependencyInjection();
+builder.Services.AddAutoMapper(typeof(MappingProfile));
+
 
 builder.Services.AddControllersWithViews()
     .AddJsonOptions(options => options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
