@@ -1,33 +1,43 @@
 ﻿using MilkyCow.BusinessLayer.Abstact.IAbstractService;
+using MilkyCow.DataAccessLayer.Abstact.IAbstractDal;
 using MilkyCow.EntityLayer.Concrete;
 
 namespace MilkyCow.BusinessLayer.Concrete.ConcreteManager
 {
     public class BusinessHourManager : IBusinessHourService
     {
-        public void Add(BusinessHour entity)
+        private readonly IBusinessHourDal _businessHourDal;
+
+		public BusinessHourManager(IBusinessHourDal businessHourDal)
+		{
+			_businessHourDal = businessHourDal;
+		}
+
+		public void Add(BusinessHour entity)
         {
-            throw new NotImplementedException();
+            _businessHourDal.Add(entity);
         }
 
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            _businessHourDal.Delete(id);
         }
 
         public List<BusinessHour> GetAll()
         {
-            throw new NotImplementedException();
+            var values = _businessHourDal.GetAll();
+            return values;
         }
 
         public BusinessHour GetById(int id)
         {
-            throw new NotImplementedException();
+            var values = _businessHourDal.GetById(id);
+            return values;
         }
 
         public void Update(BusinessHour entity)
         {
-            throw new NotImplementedException();
+            _businessHourDal.Update(entity);
         }
     }
 }

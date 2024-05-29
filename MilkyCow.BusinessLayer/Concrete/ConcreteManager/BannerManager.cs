@@ -1,4 +1,5 @@
 ﻿using MilkyCow.BusinessLayer.Abstact.IAbstractService;
+using MilkyCow.DataAccessLayer.Abstact.IAbstractDal;
 using MilkyCow.EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
@@ -10,29 +11,38 @@ namespace MilkyCow.BusinessLayer.Concrete.ConcreteManager
 {
     public class BannerManager : IBannerService
     {
-        public void Add(Banner entity)
+        private readonly IBannerDal _bannerDal;
+
+		public BannerManager(IBannerDal bannerDal)
+		{
+			_bannerDal = bannerDal;
+		}
+
+		public void Add(Banner entity)
         {
-            throw new NotImplementedException();
+            _bannerDal.Add(entity);
         }
 
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            _bannerDal.Delete(id);
         }
 
         public List<Banner> GetAll()
         {
-            throw new NotImplementedException();
+            var values = _bannerDal.GetAll();
+            return values;
         }
 
         public Banner GetById(int id)
         {
-            throw new NotImplementedException();
+            var values = _bannerDal.GetById(id);
+            return values;
         }
 
         public void Update(Banner entity)
         {
-            throw new NotImplementedException();
+            _bannerDal.Update(entity);
         }
     }
 }

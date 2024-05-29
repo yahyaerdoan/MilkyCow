@@ -3,12 +3,15 @@ using MilkyCow.DataAccessLayer.Concrete.Context;
 using System.Text.Json.Serialization;
 using MilkyCow.BusinessLayer.Extentensions;
 using MilkyCow.DataTransferObjectLayer.AutoMapper.EntityDtoMappers;
+using MilkyCow.BusinessLayer.Abstact.IServiceManager;
+using MilkyCow.BusinessLayer.Concrete.ServiceManager;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddDbContext<DbContext, MilkyCowDbContext>();
 builder.Services.ContainerDependencyInjection();
+builder.Services.AddScoped<IServiceManager, ServiceManager>();
 builder.Services.AddAutoMapper(typeof(MappingProfile));
 
 
