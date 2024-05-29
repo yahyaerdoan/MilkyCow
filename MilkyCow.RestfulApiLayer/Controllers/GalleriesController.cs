@@ -32,7 +32,7 @@ namespace MilkyCow.RestfulApiLayer.Controllers
 		public ActionResult GetGalleryById(int id)
 		{
 			var values = _serviceManger.GalleryService.GetById(id);
-			var resultDtos = _mapper.Map<IEnumerable<ResultGalleryDto>>(values);
+			var resultDtos = _mapper.Map<Gallery,ResultGalleryDto>(values);
 			return Ok(resultDtos);
 		}
 

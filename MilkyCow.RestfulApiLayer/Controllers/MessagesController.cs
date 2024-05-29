@@ -32,7 +32,7 @@ namespace MilkyCow.RestfulApiLayer.Controllers
 		public ActionResult GetMessageById(int id)
 		{
 			var values = _serviceManger.MessageService.GetById(id);
-			var resultDtos = _mapper.Map<IEnumerable<ResultMessageDto>>(values);
+			var resultDtos = _mapper.Map<Message,ResultMessageDto>(values);
 			return Ok(resultDtos);
 		}
 

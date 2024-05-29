@@ -32,7 +32,7 @@ namespace MilkyCow.RestfulApiLayer.Controllers
 		public ActionResult GetTestimonialById(int id)
 		{
 			var values = _serviceManger.TestimonialService.GetById(id);
-			var resultDtos = _mapper.Map<IEnumerable<ResultTestimonialDto>>(values);
+			var resultDtos = _mapper.Map<Testimonial,ResultTestimonialDto>(values);
 			return Ok(resultDtos);
 		}
 

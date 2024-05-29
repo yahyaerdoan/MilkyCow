@@ -32,7 +32,7 @@ namespace MilkyCow.RestfulApiLayer.Controllers
 		public ActionResult GetTeamMemberById(int id)
 		{
 			var values = _ServiceManger.TeamMemberService.GetById(id);
-			var resultDtos = _mapper.Map<IEnumerable<ResultTeamMemberDto>>(values);
+			var resultDtos = _mapper.Map<TeamMember,ResultTeamMemberDto>(values);
 			return Ok(resultDtos);
 		}
 

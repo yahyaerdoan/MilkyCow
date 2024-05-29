@@ -34,7 +34,7 @@ namespace MilkyCow.RestfulApiLayer.Controllers
 		public ActionResult GetBannerById(int id)
 		{
 			var values = _serviceManger.BannerService.GetById(id);
-			var resultDtos = _mapper.Map<IEnumerable<ResultBannerDto>>(values);
+			var resultDtos = _mapper.Map<Banner,ResultBannerDto>(values);
 			return Ok(resultDtos);
 		}
 

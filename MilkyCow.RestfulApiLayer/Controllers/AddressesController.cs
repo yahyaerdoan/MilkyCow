@@ -33,7 +33,7 @@ namespace MilkyCow.RestfulApiLayer.Controllers
 		public ActionResult GetAddressById(int id)
 		{
 			var values = _addressService.GetById(id);
-			var resultDtos = _mapper.Map<IEnumerable<ResultAddressDto>>(values);
+			var resultDtos = _mapper.Map<Address,ResultAddressDto>(values);
 			return Ok(resultDtos);
 		}
 

@@ -32,7 +32,7 @@ namespace MilkyCow.RestfulApiLayer.Controllers
 		public ActionResult GetWhyUsById(int id)
 		{
 			var values = _serviceManger.WhyUsService.GetById(id);
-			var resultDtos = _mapper.Map<IEnumerable<ResultWhyUsDto>>(values);
+			var resultDtos = _mapper.Map<WhyUs,ResultWhyUsDto>(values);
 			return Ok(resultDtos);
 		}
 

@@ -35,8 +35,7 @@ namespace MilkyCow.RestfulApiLayer.Controllers
 			{
 				return NotFound();
 			}
-
-			var aboutUsDto = _mapper.Map<IEnumerable<ResultAboutUsDto>>(aboutUs);
+			var aboutUsDto = _mapper.Map<AboutUs,ResultAboutUsDto>(aboutUs);
 			return Ok(aboutUsDto);
 		}
 

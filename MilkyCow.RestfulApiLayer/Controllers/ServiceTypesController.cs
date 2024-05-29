@@ -32,7 +32,7 @@ namespace MilkyCow.RestfulApiLayer.Controllers
 		public ActionResult GetServiceTypeById(int id)
 		{
 			var values = _serviceManger.ServiceTypeService.GetById(id);
-			var resultDtos = _mapper.Map<IEnumerable<ResultServiceTypeDto>>(values);
+			var resultDtos = _mapper.Map<ServiceType,ResultServiceTypeDto>(values);
 			return Ok(resultDtos);
 		}
 

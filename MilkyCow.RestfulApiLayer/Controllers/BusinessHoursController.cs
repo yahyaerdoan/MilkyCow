@@ -33,7 +33,7 @@ namespace MilkyCow.RestfulApiLayer.Controllers
 		public ActionResult GetBusinessHourById(int id)
 		{
 			var values = _serviceManger.BusinessHourService.GetById(id);
-			var resultDtos = _mapper.Map<IEnumerable<ResultBusinessHourDto>>(values);
+			var resultDtos = _mapper.Map<BusinessHour,ResultBusinessHourDto>(values);
 			return Ok(resultDtos);
 		}
 
