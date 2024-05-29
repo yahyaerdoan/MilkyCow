@@ -1,33 +1,43 @@
 ﻿using MilkyCow.BusinessLayer.Abstact.IAbstractService;
+using MilkyCow.DataAccessLayer.Abstact.IAbstractDal;
 using MilkyCow.EntityLayer.Concrete;
 
 namespace MilkyCow.BusinessLayer.Concrete.ConcreteManager
 {
     public class SocialMediaManager : ISocialMediaService
     {
-        public void Add(SocialMedia entity)
+        private readonly ISocialMediaDal _socialMediaDal;
+
+		public SocialMediaManager(ISocialMediaDal socialMediaDal)
+		{
+			_socialMediaDal = socialMediaDal;
+		}
+
+		public void Add(SocialMedia entity)
         {
-            throw new NotImplementedException();
+			_socialMediaDal.Add(entity);
         }
 
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+			_socialMediaDal.Delete(id);
         }
 
         public List<SocialMedia> GetAll()
         {
-            throw new NotImplementedException();
+            var values = _socialMediaDal.GetAll();
+            return values;
         }
 
         public SocialMedia GetById(int id)
         {
-            throw new NotImplementedException();
+            var values = _socialMediaDal.GetById(id);
+            return values;
         }
 
         public void Update(SocialMedia entity)
         {
-            throw new NotImplementedException();
+            _socialMediaDal.Update(entity);
         }
     }
 }

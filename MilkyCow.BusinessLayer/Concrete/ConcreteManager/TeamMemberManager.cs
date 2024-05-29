@@ -1,33 +1,43 @@
 ﻿using MilkyCow.BusinessLayer.Abstact.IAbstractService;
+using MilkyCow.DataAccessLayer.Abstact.IAbstractDal;
 using MilkyCow.EntityLayer.Concrete;
 
 namespace MilkyCow.BusinessLayer.Concrete.ConcreteManager
 {
     public class TeamMemberManager : ITeamMemberService
     {
-        public void Add(TeamMember entity)
+        private readonly ITeamMemberDal _memberDal;
+
+		public TeamMemberManager(ITeamMemberDal memberDal)
+		{
+			_memberDal = memberDal;
+		}
+
+		public void Add(TeamMember entity)
         {
-            throw new NotImplementedException();
+            _memberDal.Add(entity);
         }
 
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            _memberDal.Delete(id);
         }
 
         public List<TeamMember> GetAll()
         {
-            throw new NotImplementedException();
+            var vaues = _memberDal.GetAll();    
+            return vaues;
         }
 
         public TeamMember GetById(int id)
         {
-            throw new NotImplementedException();
+            var values = _memberDal.GetById(id);
+            return values;
         }
 
         public void Update(TeamMember entity)
         {
-            throw new NotImplementedException();
+            _memberDal.Update(entity);
         }
     }
 }

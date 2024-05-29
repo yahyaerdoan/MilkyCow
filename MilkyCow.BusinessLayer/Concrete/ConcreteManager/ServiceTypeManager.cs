@@ -1,33 +1,43 @@
 ﻿using MilkyCow.BusinessLayer.Abstact.IAbstractService;
+using MilkyCow.DataAccessLayer.Abstact.IAbstractDal;
 using MilkyCow.EntityLayer.Concrete;
 
 namespace MilkyCow.BusinessLayer.Concrete.ConcreteManager
 {
     public class ServiceTypeManager : IServiceTypeService
     {
-        public void Add(ServiceType entity)
+        private readonly IServiceTypeDal _serviceypeDal;
+
+		public ServiceTypeManager(IServiceTypeDal serviceypeDal)
+		{
+			_serviceypeDal = serviceypeDal;
+		}
+
+		public void Add(ServiceType entity)
         {
-            throw new NotImplementedException();
+            _serviceypeDal.Add(entity);
         }
 
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            _serviceypeDal.Delete(id);
         }
 
         public List<ServiceType> GetAll()
         {
-            throw new NotImplementedException();
+           var values = _serviceypeDal.GetAll();
+            return values;
         }
 
         public ServiceType GetById(int id)
         {
-            throw new NotImplementedException();
+            var values = _serviceypeDal.GetById(id);
+            return values;
         }
 
         public void Update(ServiceType entity)
         {
-            throw new NotImplementedException();
+            _serviceypeDal.Update(entity);
         }
     }
 }
