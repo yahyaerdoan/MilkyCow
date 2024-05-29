@@ -1,6 +1,10 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MilkyCow.BusinessLayer.Abstact.IAbstractService;
+using MilkyCow.BusinessLayer.Abstact.IServiceManager;
+using MilkyCow.DataTransferObjectLayer.Concrete.SliderDtos;
+using MilkyCow.EntityLayer.Concrete;
 
 namespace MilkyCow.WebApi.Controllers
 {
@@ -8,21 +12,51 @@ namespace MilkyCow.WebApi.Controllers
     [ApiController]
     public class SlidersController : ControllerBase
     {
-        private readonly ISliderService _sliderService;
+		private readonly IServiceManager _serviceManger;
+		private readonly IMapper _mapper;
 
-        public SlidersController(ISliderService sliderService)
-        {
-            _sliderService = sliderService;
-        }
-        [HttpGet("GetAllSliders")]
-        public IActionResult GetAllSliders()
-        {
-            var result = _sliderService.GetAll();
-            if (result == null || result.Count == 0)
-            {
-                return NotFound($"Data does not exist yet.");
-            }
-            return Ok(result);
-        }
-    }
+		public SlidersController(IMapper mapper, IServiceManager serviceManger)
+		{
+			_mapper = mapper;
+			_serviceManger = serviceManger;
+		}
+
+		[HttpGet("SlidersList")]
+		public ActionResult SlidersList()
+		{
+			var values = _serviceManger.SliderService.GetAll();
+			var resultDtos = _mapper.Map<IEnumerable<ResultSliderDto>>(values);
+			return Ok(resultDtos);
+		}
+
+		[HttpGet("GetSliderById/{id}")]
+		public ActionResult GetSliderById(int id)
+		{
+			var values = _serviceManger.SliderService.GetById(id);
+			var resultDtos = _mapper.Map<Slider, ResultSliderDto>(values);
+			return Ok(resultDtos);
+		}
+
+		[HttpPost("CreateSlider")]
+		public ActionResult CreateBanner(CreateSliderDto createSliderDto)
+		{
+			var values = _mapper.Map<Slider>(createSliderDto);
+			_serviceManger.SliderService.Add(values);
+			return Ok("Slider added.");
+		}
+
+		[HttpDelete("DeleteSlider/{id}")]
+		public ActionResult DeleteSlider(int id)
+		{
+			_serviceManger.SliderService.Delete(id);
+			return Ok("Slider deleted.");
+		}
+		[HttpPut("UpdateSlider")]
+		public ActionResult UpdateSlider(UpdateSliderDto updateSliderDto)
+		{
+			var values = _mapper.Map<Slider>(updateSliderDto);
+			_serviceManger.SliderService.Update(values);
+			return Ok("Slider updated.");
+		}
+	}
 }
