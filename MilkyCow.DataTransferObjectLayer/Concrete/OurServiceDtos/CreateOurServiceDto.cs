@@ -6,5 +6,5 @@ using System.Threading.Tasks;
 
 namespace MilkyCow.DataTransferObjectLayer.Concrete.OurServiceDtos
 {
-    public record CreateOurServiceDto(int OurServiceId, string Title, string Description, string ImageUrl, bool Status);
+    public record CreateOurServiceDto(string Title, string Description, string ImageUrl, bool Status);
 }

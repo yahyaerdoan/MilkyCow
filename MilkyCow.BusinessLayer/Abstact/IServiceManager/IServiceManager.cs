@@ -16,7 +16,7 @@ namespace MilkyCow.BusinessLayer.Abstact.IServiceManager
         ICategoryService CategoryService { get; }
         IGalleryService GalleryService { get; }
         IMessageService MessageService { get; }
-        IOurServiceService IOurService { get; }
+        IOurServiceService OurService { get; }
         IProductService ProductService { get; }
         IServiceTypeService ServiceTypeService { get; }
         ISliderService SliderService { get; }

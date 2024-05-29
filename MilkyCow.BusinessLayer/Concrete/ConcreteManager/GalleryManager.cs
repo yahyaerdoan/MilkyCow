@@ -1,33 +1,43 @@
 ﻿using MilkyCow.BusinessLayer.Abstact.IAbstractService;
+using MilkyCow.DataAccessLayer.Abstact.IAbstractDal;
 using MilkyCow.EntityLayer.Concrete;
 
 namespace MilkyCow.BusinessLayer.Concrete.ConcreteManager
 {
     public class GalleryManager : IGalleryService
     {
-        public void Add(Gallery entity)
+        private readonly IGalleryDal _galleryDal;
+
+		public GalleryManager(IGalleryDal galleryDal)
+		{
+			_galleryDal = galleryDal;
+		}
+
+		public void Add(Gallery entity)
         {
-            throw new NotImplementedException();
+            _galleryDal.Add(entity);
         }
 
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            _galleryDal.Delete(id);
         }
 
         public List<Gallery> GetAll()
         {
-            throw new NotImplementedException();
+            var values = _galleryDal.GetAll();
+            return values;
         }
 
         public Gallery GetById(int id)
         {
-            throw new NotImplementedException();
+            var values = _galleryDal.GetById(id);
+            return values;
         }
 
         public void Update(Gallery entity)
         {
-            throw new NotImplementedException();
+            _galleryDal.Update(entity);
         }
     }
 }

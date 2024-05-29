@@ -63,7 +63,7 @@ namespace MilkyCow.BusinessLayer.Concrete.ServiceManager
 
         public IMessageService MessageService => _messageService;
 
-        public IOurServiceService IOurService => _ourServiceService;
+        public IOurServiceService OurService => _ourServiceService;
 
         public IProductService ProductService => _productService;
 

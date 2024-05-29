@@ -1,33 +1,43 @@
 ﻿using MilkyCow.BusinessLayer.Abstact.IAbstractService;
+using MilkyCow.DataAccessLayer.Abstact.IAbstractDal;
 using MilkyCow.EntityLayer.Concrete;
 
 namespace MilkyCow.BusinessLayer.Concrete.ConcreteManager
 {
     public class MessageManager : IMessageService
     {
-        public void Add(Message entity)
+        private readonly IMessageDal _messageDal;
+
+		public MessageManager(IMessageDal messageDal)
+		{
+			_messageDal = messageDal;
+		}
+
+		public void Add(Message entity)
         {
-            throw new NotImplementedException();
+            _messageDal.Add(entity);
         }
 
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            _messageDal.Delete(id);
         }
 
         public List<Message> GetAll()
         {
-            throw new NotImplementedException();
+            var values = _messageDal.GetAll();
+            return values;
         }
 
         public Message GetById(int id)
         {
-            throw new NotImplementedException();
+            var values = _messageDal.GetById(id);
+            return values;
         }
 
         public void Update(Message entity)
         {
-            throw new NotImplementedException();
+            _messageDal.Update(entity);
         }
     }
 }
