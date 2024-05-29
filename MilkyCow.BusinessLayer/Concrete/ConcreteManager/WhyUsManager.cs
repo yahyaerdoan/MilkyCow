@@ -5,29 +5,38 @@ namespace MilkyCow.BusinessLayer.Concrete.ConcreteManager
 {
     public class WhyUsManager : IWhyUsService
     {
-        public void Add(WhyUs entity)
+        private readonly IWhyUsDal _whyUsDal;
+
+		public WhyUsManager(IWhyUsDal whyUsDal)
+		{
+			_whyUsDal = whyUsDal;
+		}
+
+		public void Add(WhyUs entity)
         {
-            throw new NotImplementedException();
+            _whyUsDal.Add(entity);
         }
 
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            _whyUsDal?.Delete(id);
         }
 
         public List<WhyUs> GetAll()
         {
-            throw new NotImplementedException();
+            var values = _whyUsDal.GetAll();
+            return values;
         }
 
         public WhyUs GetById(int id)
         {
-            throw new NotImplementedException();
+            var values = _whyUsDal.GetById(id);
+            return values;
         }
 
         public void Update(WhyUs entity)
         {
-            throw new NotImplementedException();
+            _whyUsDal.Update(entity);
         }
     }
 }

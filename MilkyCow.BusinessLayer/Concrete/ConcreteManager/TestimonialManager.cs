@@ -1,33 +1,43 @@
 ﻿using MilkyCow.BusinessLayer.Abstact.IAbstractService;
+using MilkyCow.DataAccessLayer.Abstact.IAbstractDal;
 using MilkyCow.EntityLayer.Concrete;
 
 namespace MilkyCow.BusinessLayer.Concrete.ConcreteManager
 {
     public class TestimonialManager : ITestimonialService
     {
-        public void Add(Testimonial entity)
+        private readonly ITestimonialDal _testimonialDal;
+
+		public TestimonialManager(ITestimonialDal testimonialDal)
+		{
+			_testimonialDal = testimonialDal;
+		}
+
+		public void Add(Testimonial entity)
         {
-            throw new NotImplementedException();
+            _testimonialDal.Add(entity);
         }
 
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            _testimonialDal.Delete(id);
         }
 
         public List<Testimonial> GetAll()
         {
-            throw new NotImplementedException();
+            var values = _testimonialDal.GetAll();
+            return values;
         }
 
         public Testimonial GetById(int id)
         {
-            throw new NotImplementedException();
+            var values = _testimonialDal.GetById(id);
+            return values;
         }
 
         public void Update(Testimonial entity)
         {
-            throw new NotImplementedException();
+            _testimonialDal.Update(entity);
         }
     }
 }
