@@ -15,6 +15,8 @@ namespace MilkyCow.BusinessLayer.Concrete.ConcreteManager
 
 		public void Add(Message entity)
         {
+            entity.SendingDate = DateTime.Now;
+            entity.IsRead = false;
             _messageDal.Add(entity);
         }
 

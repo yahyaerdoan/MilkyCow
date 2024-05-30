@@ -20,7 +20,7 @@ namespace MilkyCow.RestfulApiLayer.Controllers
 			_serviceManger = serviceManger;
 		}
 
-		[HttpGet("MessagesList")]
+		[HttpGet("MessageList")]
 		public ActionResult MessagesList()
 		{
 			var values = _serviceManger.MessageService.GetAll();
@@ -40,7 +40,6 @@ namespace MilkyCow.RestfulApiLayer.Controllers
 		public ActionResult CreateMessage(CreateMessageDto createMessageDto)
 		{
 			var values = _mapper.Map<Message>(createMessageDto);
-			values.SendingDate = DateTime.Now;
 			_serviceManger.MessageService.Add(values);
 			return Ok("Message added.");
 		}

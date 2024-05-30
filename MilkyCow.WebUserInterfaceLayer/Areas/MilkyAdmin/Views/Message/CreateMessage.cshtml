@@ -1,0 +1,46 @@
+﻿@model CreateMessageDto
+@{
+    ViewData["Title"] = "CreateMessage";
+    Layout = "~/Areas/MilkyAdmin/Views/Layout/Index.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="card-header">
+        <h6 class="card-title">
+            <b>Create Message</b>
+        </h6>
+    </div>
+    <div class="card-body">
+        <form role="form" method="post" action="/MilkyAdmin/Message/CreateMessage">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="text-danger">Full Name</label>
+                        <input type="text" class="form-control" placeholder="full name" asp-for="FullName">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="text-danger">Email</label>
+                        <input type="text" class="form-control" placeholder="email" asp-for="Email">
+                    </div>
+                </div>
+                 <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="text-danger">Subject</label>
+                        <input type="text" class="form-control" placeholder="subject" asp-for="Subject">
+                    </div>
+                </div>                          
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <label class="text-danger">Content</label>
+                        <textarea type="text" class="form-control" placeholder="descriptions" rows="6" asp-for="Content"></textarea>
+                    </div>
+                </div>
+            </div>
+            <button style="margin-top:1rem" type="submit" class="btn btn-outline-success col-md-12">Create New Message</button>
+        </form>
+    </div>
+</div>
