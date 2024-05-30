@@ -1,0 +1,62 @@
+﻿@model List<ResultAddressDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/MilkyAdmin/Views/Layout/Index.cshtml";
+}
+
+@{
+    int count = 0;
+}
+<div class="container-fluid">
+    <div class="card-header">
+        <h3 class="card-title">
+            <b>Address List</b>
+        </h3>
+    </div>
+    <div class="card-body table-responsive p-0">
+        <table class="table table-hover text-decoration-none">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Id</th>
+                    <th>Street</th>
+                    <th>City</th>                  
+                    <th>Country</th>                  
+                    <th>Phone</th>                  
+                    <th>Email</th>                  
+                    <th>MapLocation</th>                  
+                    <th>Update</th>
+                    <th>Delete</th>               
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    count++;
+                    <tr>
+                        <td><b>@count</b></td>
+                        <td>@item.AddressId</td>
+                        <td class="text-danger">@item.Street</td>
+                        <td>@item.City</td>
+                        <td>@item.Country</td>
+                        <td>@item.Phone</td>
+                        <td>@item.Email</td>
+                        <td>@item.MapLocation</td>
+                       
+                        <td>
+                            <a href="/MilkyAdmin/Address/UpdateAddress/@item.AddressId" class="btn btn-outline-primary sm">Update</a>
+                        </td>
+                        <td>
+                            <a href="/MilkyAdmin/Address/DeleteAddress/@item.AddressId" class="btn btn-outline-danger sm">Delete</a>
+                        </td>                      
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <div style="margin-top:1rem">
+            <a href="/MilkyAdmin/Address/CreateAddress" class="btn btn-outline-primary col-md-12">Create New Address</a>
+        </div>
+    </div>
+</div>
+
+
