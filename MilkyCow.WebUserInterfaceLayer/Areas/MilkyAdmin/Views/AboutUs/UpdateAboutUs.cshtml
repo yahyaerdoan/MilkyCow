@@ -1,0 +1,36 @@
+﻿@model UpdateAboutUsDto
+@{
+    ViewData["Title"] = "UpdateAboutUs";
+    Layout = "~/Areas/MilkyAdmin/Views/Layout/Index.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="card-header">
+        <h3 class="card-title">
+            <b>Update About Us</b>
+        </h3>
+    </div>
+    <div class="card-body">
+        <form role="form" method="post" action="/MilkyAdmin/AboutUs/UpdateAboutUs">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="text-danger">Title</label>
+                        <input type="hidden" class="form-control" placeholder="title" asp-for="AboutUsId">
+                        <input type="text" class="form-control" placeholder="title" asp-for="Title">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <label class="text-danger">Description</label>
+                        <textarea type="text" class="form-control" placeholder="descriptions" rows="6" asp-for="Description"></textarea>
+                    </div>
+                </div>
+            </div>
+            <button style="margin-top:1rem" type="submit" class="btn btn-outline-success col-md-12">Update New About Us</button>
+        </form>
+    </div>
+</div>
+

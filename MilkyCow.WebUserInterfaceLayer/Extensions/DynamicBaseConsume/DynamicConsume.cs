@@ -24,7 +24,7 @@ namespace MilkyCow.WebUserInterfaceLayer.Extensions.DynamicBaseConsume
         public async Task<TEntity> GetByIdAsync(string link, int id)
         {
             var configuration = _configuration["AppSettings:BaseApiUrl"];
-            var response = await _httpClientFactory.CreateClient().GetFromJsonAsync<TEntity>($"{configuration}/{link}/" + id);
+            var response = await _httpClientFactory.CreateClient().GetFromJsonAsync<TEntity>($"{configuration}/{link}/{id}");
             return response ?? null;
         }
 
@@ -44,7 +44,7 @@ namespace MilkyCow.WebUserInterfaceLayer.Extensions.DynamicBaseConsume
         {
             var configuration = _configuration["AppSettings:BaseApiUrl"];
             var client = _httpClientFactory.CreateClient();        
-            var responseMessage = await client.PutAsJsonAsync($"{configuration}/{link}", classDto);
+            var responseMessage = await client.PutAsJsonAsync($"{configuration}/{link}/", classDto);
             if (responseMessage.IsSuccessStatusCode)
             {
                 return 1;

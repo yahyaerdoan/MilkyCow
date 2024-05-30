@@ -49,7 +49,7 @@ namespace MilkyCow.WebUserInterfaceLayer.Areas.MilkyAdmin.Controllers.Default
 		[HttpGet]
 		public async Task<IActionResult> UpdateAboutUs(int id)
 		{
-			var values = await _updateAboutUsDto.GetByIdAsync("AboutUs/GetAboutUs", id);
+			var values = await _updateAboutUsDto.GetByIdAsync("AboutUs/GetAboutUsById", id);
 			return View(values);
 		}
 
