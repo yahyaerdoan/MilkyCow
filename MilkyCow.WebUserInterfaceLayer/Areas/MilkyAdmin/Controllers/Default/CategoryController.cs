@@ -14,7 +14,6 @@ namespace MilkyCow.WebUserInterfaceLayer.Areas.MilkyAdmin.Controllers.Default
         private readonly DynamicConsume<UpdateCategoryDto> _updateCategoryDto;
         private readonly DynamicConsume<object> _object;
 
-
         public CategoryController(DynamicConsume<ResultCategoryDto> resultCategoryDto, DynamicConsume<CreateCategoryDto> createCategoryDto, DynamicConsume<UpdateCategoryDto> updateCategoryDto, DynamicConsume<object> oobject)
         {
             _resultCategoryDto = resultCategoryDto;
@@ -22,7 +21,6 @@ namespace MilkyCow.WebUserInterfaceLayer.Areas.MilkyAdmin.Controllers.Default
             _updateCategoryDto = updateCategoryDto;
             _object = oobject;
         }
-
         public async Task<IActionResult> Index()
         {
             var values = await _resultCategoryDto.GetListAsync("Categories/CategoryList");
@@ -34,7 +32,6 @@ namespace MilkyCow.WebUserInterfaceLayer.Areas.MilkyAdmin.Controllers.Default
         {
             return View();
         }
-
 
         [HttpPost]
         public async Task<IActionResult> CreateCategory(CreateCategoryDto createCategoryDto)
@@ -54,7 +51,6 @@ namespace MilkyCow.WebUserInterfaceLayer.Areas.MilkyAdmin.Controllers.Default
             return View(values);
         }
 
-
         [HttpPost]
         public async Task<IActionResult> UpdateCategory(UpdateCategoryDto updateCategoryDto)
         {
@@ -64,9 +60,7 @@ namespace MilkyCow.WebUserInterfaceLayer.Areas.MilkyAdmin.Controllers.Default
                 return RedirectToAction("Index");
             }
             return View();
-        }
-
- 
+        } 
         public async Task<IActionResult> DeleteCategory(int id)
         {
           var values = await _object.DeleteAsync("Categories/DeleteCategory", id);

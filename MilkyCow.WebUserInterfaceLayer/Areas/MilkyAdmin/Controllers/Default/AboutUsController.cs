@@ -64,8 +64,6 @@ namespace MilkyCow.WebUserInterfaceLayer.Areas.MilkyAdmin.Controllers.Default
 			}
 			return View();
 		}
-
-
 		public async Task<IActionResult> DeleteAboutUs(int id)
 		{
 			var values = await _object.DeleteAsync("AboutUs/DeleteAboutUs", id);
