@@ -20,8 +20,8 @@ namespace MilkyCow.RestfulApiLayer.Controllers
 			_serviceManger = serviceManger;
 		}
 
-		[HttpGet("TeamMemberSocialMediasList")]
-		public ActionResult TeamMemberSocialMediasList()
+		[HttpGet("TeamMemberSocialMediaList")]
+		public ActionResult TeamMemberSocialMediaList()
 		{
 			var values = _serviceManger.TeamMemberSocialMediaService.GetAll();
 			var resultDtos = _mapper.Map<IEnumerable<ResultTeamMemberSocialMediaDto>>(values);

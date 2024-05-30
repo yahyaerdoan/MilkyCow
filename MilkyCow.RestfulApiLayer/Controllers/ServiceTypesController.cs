@@ -20,8 +20,8 @@ namespace MilkyCow.RestfulApiLayer.Controllers
 			_serviceManger = serviceManger;
 		}
 
-		[HttpGet("ServiceTypesList")]
-		public ActionResult ServiceTypesList()
+		[HttpGet("ServiceTypeList")]
+		public ActionResult ServiceTypeList()
 		{
 			var values = _serviceManger.ServiceTypeService.GetAll();
 			var resultDtos = _mapper.Map<IEnumerable<ResultServiceTypeDto>>(values);

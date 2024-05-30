@@ -22,7 +22,7 @@ namespace MilkyCow.RestfulApiLayer.Controllers
 		}
 
 		[HttpGet("BusinessHourList")]
-		public ActionResult BusinessHoursList()
+		public ActionResult BusinessHourList()
 		{
 			var values = _serviceManger.BusinessHourService.GetAll();
 			var resultDtos = _mapper.Map<IEnumerable<ResultBusinessHourDto>>(values);

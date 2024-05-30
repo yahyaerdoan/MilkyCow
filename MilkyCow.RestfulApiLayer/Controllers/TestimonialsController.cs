@@ -20,8 +20,8 @@ namespace MilkyCow.RestfulApiLayer.Controllers
 			_serviceManger = serviceManger;
 		}
 
-		[HttpGet("TestimonialsList")]
-		public ActionResult TestimonialsList()
+		[HttpGet("TestimonialList")]
+		public ActionResult TestimonialList()
 		{
 			var values = _serviceManger.TestimonialService.GetAll();
 			var resultDtos = _mapper.Map<IEnumerable<ResultTestimonialDto>>(values);

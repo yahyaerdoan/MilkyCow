@@ -20,8 +20,8 @@ namespace MilkyCow.RestfulApiLayer.Controllers
 			_serviceManger = serviceManger;
 		}
 
-		[HttpGet("WhyUsDetailsList")]
-		public ActionResult WhyUsDetailsList()
+		[HttpGet("WhyUsDetailList")]
+		public ActionResult WhyUsDetailList()
 		{
 			var values = _serviceManger.WhyUsDetailService.GetAll();
 			var resultDtos = _mapper.Map<IEnumerable<ResultWhyUsDetailDto>>(values);

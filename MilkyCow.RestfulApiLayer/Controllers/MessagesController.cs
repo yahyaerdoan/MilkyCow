@@ -21,7 +21,7 @@ namespace MilkyCow.RestfulApiLayer.Controllers
 		}
 
 		[HttpGet("MessageList")]
-		public ActionResult MessagesList()
+		public ActionResult MessageList()
 		{
 			var values = _serviceManger.MessageService.GetAll();
 			var resultDtos = _mapper.Map<IEnumerable<ResultMessageDto>>(values);

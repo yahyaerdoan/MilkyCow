@@ -23,7 +23,7 @@ namespace MilkyCow.RestfulApiLayer.Controllers
 		}
 
 		[HttpGet("BannerList")]
-		public ActionResult BannersList()
+		public ActionResult BannerList()
 		{
 			var values = _serviceManger.BannerService.GetAll();
 			var resultDtos = _mapper.Map<IEnumerable<ResultBannerDto>>(values);

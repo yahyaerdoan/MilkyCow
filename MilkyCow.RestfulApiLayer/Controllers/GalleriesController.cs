@@ -21,7 +21,7 @@ namespace MilkyCow.RestfulApiLayer.Controllers
 		}
 
 		[HttpGet("GalleryList")]
-		public ActionResult GalleriesList()
+		public ActionResult GalleryList()
 		{
 			var values = _serviceManger.GalleryService.GetAll();
 			var resultDtos = _mapper.Map<IEnumerable<ResultGalleryDto>>(values);

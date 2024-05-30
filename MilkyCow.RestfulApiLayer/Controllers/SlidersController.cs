@@ -21,8 +21,8 @@ namespace MilkyCow.WebApi.Controllers
 			_serviceManger = serviceManger;
 		}
 
-		[HttpGet("SlidersList")]
-		public ActionResult SlidersList()
+		[HttpGet("SliderList")]
+		public ActionResult SliderList()
 		{
 			var values = _serviceManger.SliderService.GetAll();
 			var resultDtos = _mapper.Map<IEnumerable<ResultSliderDto>>(values);

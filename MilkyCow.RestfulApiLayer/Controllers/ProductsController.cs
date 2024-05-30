@@ -21,8 +21,8 @@ namespace MilkyCow.WebApi.Controllers
 			_serviceManger = serviceManger;
 		}
 
-		[HttpGet("ProductsList")]
-		public ActionResult ProductsList()
+		[HttpGet("ProductList")]
+		public ActionResult ProductList()
 		{
 			var values = _serviceManger.ProductService.GetAll();
 			var resultDtos = _mapper.Map<IEnumerable<ResultProductDto>>(values);

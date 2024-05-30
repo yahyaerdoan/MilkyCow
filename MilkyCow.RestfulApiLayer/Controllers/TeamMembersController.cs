@@ -20,8 +20,8 @@ namespace MilkyCow.RestfulApiLayer.Controllers
 			_ServiceManger = ServiceManger;
 		}
 
-		[HttpGet("TeamMembersList")]
-		public ActionResult TeamMembersList()
+		[HttpGet("TeamMemberList")]
+		public ActionResult TeamMemberList()
 		{
 			var values = _ServiceManger.TeamMemberService.GetAll();
 			var resultDtos = _mapper.Map<IEnumerable<ResultTeamMemberDto>>(values);
