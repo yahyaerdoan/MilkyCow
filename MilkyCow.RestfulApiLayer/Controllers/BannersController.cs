@@ -22,7 +22,7 @@ namespace MilkyCow.RestfulApiLayer.Controllers
 			_serviceManger = serviceManger;
 		}
 
-		[HttpGet("BannersList")]
+		[HttpGet("BannerList")]
 		public ActionResult BannersList()
 		{
 			var values = _serviceManger.BannerService.GetAll();

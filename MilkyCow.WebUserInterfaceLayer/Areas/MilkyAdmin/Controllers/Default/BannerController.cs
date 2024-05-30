@@ -35,7 +35,7 @@ namespace MilkyCow.WebUserInterfaceLayer.Areas.MilkyAdmin.Controllers.Default
         [HttpPost]
         public async Task<IActionResult> CreateBanner(CreateBannerDto createBannerDto)
         {
-            var values = await _createBannerDto.PostAsync("Banneres/CreateBanner", createBannerDto);
+            var values = await _createBannerDto.PostAsync("Banners/CreateBanner", createBannerDto);
             if (values > 0)
             {
                 return RedirectToAction("Index");
