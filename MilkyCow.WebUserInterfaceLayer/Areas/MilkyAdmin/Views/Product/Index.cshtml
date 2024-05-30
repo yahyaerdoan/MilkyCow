@@ -1,4 +1,4 @@
-﻿@model List<ResultMessageDto>
+﻿@model List<ResultProductDto>
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Areas/MilkyAdmin/Views/Layout/Index.cshtml";
@@ -10,7 +10,7 @@
 <div class="container-fluid">
     <div class="card-header">
         <h3 class="card-title">
-            <b>Message List</b>
+            <b>Product List</b>
         </h3>
     </div>
     <div class="card-body table-responsive p-0">
@@ -19,12 +19,12 @@
                 <tr>
                     <th>#</th>
                     <th>Id</th>
-                    <th>Full Name</th>
-                    <th>Email</th>
-                    <th>Subject</th>
-                    <th>Content</th>
-                    <th>Sending Date</th>
+                    <th>Name</th>
+                    <th>New Price</th>
+                    <th>Last Price</th>
+                    <th>Image Url</th>
                     <th>Status</th>
+                    <th>Category Name</th>
                     <th>Update</th>
                     <th>Delete</th>
                 </tr>
@@ -35,25 +35,25 @@
                     count++;
                     <tr>
                         <td><b>@count</b></td>
-                        <td>@item.MessageId</td>
-                        <td class="text-danger">@item.FullName</td>
-                        <td>@item.Email</td>
-                        <td>@item.Subject</td>
-                        <td>@item.Content</td>
-                        <td>@item.SendingDate</td>
-                        <td>@item.IsRead</td>
+                        <td>@item.ProductId</td>
+                        <td class="text-danger">@item.Name</td>
+                        <td>$@item.NewPrice</td>
+                        <td>$@item.LastPrice</td>
+                        <td>@item.Image</td>
+                        <td>@item.Status</td>
+                        <td>@item.CategoryId</td>
                         <td>
-                            <a href="/MilkyAdmin/Message/UpdateMessage/@item.MessageId" class="btn btn-outline-primary sm">Update</a>
+                            <a href="/MilkyAdmin/Product/UpdateProduct/@item.ProductId" class="btn btn-outline-primary sm">Update</a>
                         </td>
                         <td>
-                            <a href="/MilkyAdmin/Message/DeleteMessage/@item.MessageId" class="btn btn-outline-danger sm">Delete</a>
+                            <a href="/MilkyAdmin/Product/DeleteProduct/@item.ProductId" class="btn btn-outline-danger sm">Delete</a>
                         </td>
                     </tr>
                 }
             </tbody>
         </table>
         <div style="margin-top:1rem">
-            <a href="/MilkyAdmin/Message/CreateMessage" class="btn btn-outline-primary col-md-12">Create New Message</a>
+            <a href="/MilkyAdmin/Product/CreateProduct" class="btn btn-outline-primary col-md-12">Create New Product</a>
         </div>
     </div>
 </div>

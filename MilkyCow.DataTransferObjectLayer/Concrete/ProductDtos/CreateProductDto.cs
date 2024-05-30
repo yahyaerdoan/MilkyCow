@@ -14,8 +14,6 @@ namespace MilkyCow.DataTransferObjectLayer.Concrete.ProductDtos
             decimal NewPrice,
             string? Image,
             bool Status, int?
-            CategoryId,
-            [property: JsonIgnore] 
-            Category Category
+            CategoryId        
     );
 }

@@ -1,0 +1,59 @@
+﻿@model UpdateProductDto
+@{
+    ViewData["Title"] = "UpdateProduct";
+    Layout = "~/Areas/MilkyAdmin/Views/Layout/Index.cshtml";
+}
+
+
+<div class="container-fluid">
+    <div class="card-header">
+        <h3 class="card-title">
+            <b>Update Product</b>
+        </h3>
+    </div>
+    <div class="card-body">
+        <form role="form" method="post" action="/MilkyAdmin/Product/UpdateProduct">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="text-danger">Product Name</label>
+                        <input type="hidden" class="form-control" placeholder="product name" asp-for="ProductId">
+
+                        <input type="text" class="form-control" placeholder="product name" asp-for="Name">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="text-danger">New Price</label>
+                        <input type="text" class="form-control" placeholder="new price" asp-for="NewPrice">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="text-danger">Last Price</label>
+                        <input type="text" class="form-control" placeholder="last price" asp-for="LastPrice">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="text-danger">Image Url</label>
+                        <input type="text" class="form-control" placeholder="image url" asp-for="Image">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="text-danger">Status</label>
+                        <input type="text" class="form-control" placeholder="status" asp-for="Status">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="text-danger">Category Name</label>
+                        <input type="text" class="form-control" placeholder="Category Id" asp-for="CategoryId">
+                    </div>
+                </div>
+            </div>
+            <button style="margin-top:1rem" type="submit" class="btn btn-outline-success col-md-12">Update New Product</button>
+        </form>
+    </div>
+</div>
