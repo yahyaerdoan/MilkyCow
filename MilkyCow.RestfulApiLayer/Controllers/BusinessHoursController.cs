@@ -21,7 +21,7 @@ namespace MilkyCow.RestfulApiLayer.Controllers
 			_serviceManger = serviceManger;
 		}
 
-		[HttpGet("BusinessHoursList")]
+		[HttpGet("BusinessHourList")]
 		public ActionResult BusinessHoursList()
 		{
 			var values = _serviceManger.BusinessHourService.GetAll();

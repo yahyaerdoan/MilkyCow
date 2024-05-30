@@ -1,0 +1,32 @@
+﻿@model CreateBusinessHourDto
+@{
+    ViewData["Title"] = "CreateBusinessHour";
+    Layout = "~/Areas/MilkyAdmin/Views/Layout/Index.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="card-header">
+        <h3 class="card-title">
+            <b>Create BusinessHour</b>
+        </h3>
+    </div>
+    <div class="card-body">
+        <form role="form" method="post" action="/MilkyAdmin/BusinessHour/CreateBusinessHour">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="text-danger">Day</label>
+                        <input type="text" class="form-control" placeholder="day" asp-for="Day">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="text-danger">Hour</label>
+                        <input type="text" class="form-control" placeholder="hour" asp-for="Hour">
+                    </div>
+                </div>              
+            </div>
+            <button style="margin-top:1rem" type="submit" class="btn btn-outline-success col-md-12">Create New BusinessHour</button>
+        </form>
+    </div>
+</div>

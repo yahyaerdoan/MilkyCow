@@ -1,0 +1,35 @@
+﻿@model UpdateGalleryDto
+@{
+    ViewData["Title"] = "UpdateGallery";
+    Layout = "~/Areas/MilkyAdmin/Views/Layout/Index.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="card-header">
+        <h3 class="card-title">
+            <b>Update Gallery</b>
+        </h3>
+    </div>
+    <div class="card-body">
+        <form role="form" method="post" action="/MilkyAdmin/Gallery/UpdateGallery">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="text-danger">Image Url</label>
+                        <input type="hidden" class="form-control" placeholder="image url" asp-for="GalleryId">
+
+                        <input type="text" class="form-control" placeholder="image url" asp-for="ImageUrl">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="text-danger">Status</label>
+                        <input type="text" class="form-control" placeholder="status" asp-for="Status">
+                    </div>
+                </div>
+            </div>
+            <button style="margin-top:1rem" type="submit" class="btn btn-outline-success col-md-12">Update New Gallery</button>
+        </form>
+    </div>
+</div>
+

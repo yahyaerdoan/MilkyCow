@@ -20,7 +20,7 @@ namespace MilkyCow.RestfulApiLayer.Controllers
 			_serviceManger = serviceManger;
 		}
 
-		[HttpGet("GalleriesList")]
+		[HttpGet("GalleryList")]
 		public ActionResult GalleriesList()
 		{
 			var values = _serviceManger.GalleryService.GetAll();
