@@ -1,0 +1,44 @@
+﻿@model CreateSocialMediaDto
+@{
+    ViewData["Title"] = "CreateSocialMedia";
+    Layout = "~/Areas/MilkyAdmin/Views/Layout/Index.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="card-header">
+        <h6 class="card-title">
+            <b>Create SocialMedia</b>
+        </h6>
+    </div>
+    <div class="card-body">
+        <form role="form" method="post" action="/MilkyAdmin/SocialMedia/CreateSocialMedia">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="text-danger">Header</label>
+                        <input type="text" class="form-control" placeholder="header" asp-for="Name">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="text-danger">Title</label>
+                        <input type="text" class="form-control" placeholder="title" asp-for="AccountUrl">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="text-danger">Image Url</label>
+                        <input type="text" class="form-control" placeholder="image url" asp-for="Icon">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="text-danger">Status</label>
+                        <input type="text" class="form-control" placeholder="status" asp-for="Status">
+                    </div>
+                </div>
+            </div>        
+            <button style="margin-top:1rem" type="submit" class="btn btn-outline-success col-md-12">Create New SocialMedia</button>
+        </form>
+    </div>
+</div>

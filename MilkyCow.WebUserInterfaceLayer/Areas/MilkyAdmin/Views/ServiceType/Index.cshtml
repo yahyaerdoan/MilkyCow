@@ -1,0 +1,55 @@
+﻿@model List<ResultServiceTypeDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/MilkyAdmin/Views/Layout/Index.cshtml";
+}
+
+@{
+    int count = 0;
+}
+<div class="container-fluid">
+    <div class="card-header">
+        <h3 class="card-title">
+            <b>ServiceType List</b>
+        </h3>
+    </div>
+    <div class="card-body table-responsive p-0">
+        <table class="table table-hover text-decoration-none">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Id</th>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Icon</th>
+                    <th>Status</th>
+                    <th>Update</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    count++;
+                    <tr>
+                        <td><b>@count</b></td>
+                        <td>@item.ServiceTypeId</td>
+                        <td class="text-danger">@item.Title</td>
+                        <td>@item.Description</td>
+                        <td>@item.Icon</td>
+                        <td>@item.Status</td>                 
+                        <td>
+                            <a href="/MilkyAdmin/ServiceType/UpdateServiceType/@item.ServiceTypeId" class="btn btn-outline-primary sm">Update</a>
+                        </td>
+                        <td>
+                            <a href="/MilkyAdmin/ServiceType/DeleteServiceType/@item.ServiceTypeId" class="btn btn-outline-danger sm">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <div style="margin-top:1rem">
+            <a href="/MilkyAdmin/ServiceType/CreateServiceType" class="btn btn-outline-primary col-md-12">Create New ServiceType</a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,46 @@
+﻿@model UpdateSocialMediaDto
+@{
+    ViewData["Title"] = "UpdateSocialMedia";
+    Layout = "~/Areas/MilkyAdmin/Views/Layout/Index.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="card-header">
+        <h6 class="card-title">
+            <b>Update SocialMedia</b>
+        </h6>
+    </div>
+    <div class="card-body">
+        <form role="form" method="post" action="/MilkyAdmin/SocialMedia/UpdateSocialMedia">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="text-danger">Social Media Name</label>
+                        <input type="hidden" class="form-control" placeholder="header" asp-for="SocialMediaId">
+
+                        <input type="text" class="form-control" placeholder="Social Media name" asp-for="Name">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="text-danger">Account Url</label>
+                        <input type="text" class="form-control" placeholder="account url" asp-for="AccountUrl">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="text-danger">Image Url</label>
+                        <input type="text" class="form-control" placeholder="Icon url" asp-for="Icon">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="text-danger">Status</label>
+                        <input type="text" class="form-control" placeholder="status" asp-for="Status">
+                    </div>
+                </div>
+            </div>
+            <button style="margin-top:1rem" type="submit" class="btn btn-outline-success col-md-12">Update New SocialMedia</button>
+        </form>
+    </div>
+</div>
