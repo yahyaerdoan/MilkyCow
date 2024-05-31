@@ -1,0 +1,57 @@
+﻿@model List<ResultTeamMemberDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/MilkyAdmin/Views/Layout/Index.cshtml";
+}
+
+@{
+    int count = 0;
+}
+<div class="container-fluid">
+    <div class="card-header">
+        <h6 class="card-title">
+            <b>TeamMember List</b>
+        </h6>
+    </div>
+    <div class="card-body table-responsive p-0">
+        <table class="table table-hover text-decoration-none">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Id</th>
+                    <th>Name - Surname</th>
+                    <th>Title</th>
+                    <th>Image Url</th>
+                    <th>Team Member Social Media Id</th>
+                    <th>Status</th>
+                    <th>Update</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    count++;
+                    <tr>
+                        <td><b>@count</b></td>
+                        <td>@item.TeamMemberId</td>
+                        <td class="text-danger">@item.FirstName @item.LastName</td>
+                        <td>@item.Title</td>
+                        <td>@item.ImageUrl</td>
+                        <td>@item.TeamMemberSocialMediaId</td>
+                        <td>@item.Status</td>
+                        <td>
+                            <a href="/MilkyAdmin/TeamMember/UpdateTeamMember/@item.TeamMemberId" class="btn btn-outline-primary sm">Update</a>
+                        </td>
+                        <td>
+                            <a href="/MilkyAdmin/TeamMember/DeleteTeamMember/@item.TeamMemberId" class="btn btn-outline-danger sm">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <div style="margin-top:1rem">
+            <a href="/MilkyAdmin/TeamMember/CreateTeamMember" class="btn btn-outline-primary col-md-12">Create New TeamMember</a>
+        </div>
+    </div>
+</div>

@@ -8,5 +8,5 @@ using System.Threading.Tasks;
 
 namespace MilkyCow.DataTransferObjectLayer.Concrete.TeamMemberDtos
 {
-    public record CreateTeamMemberDto(string FirstName, string LastName, string ImageUrl, string Title, bool Status, int TeamMemberSocialMediaId, [property: JsonIgnore] TeamMemberSocialMedia TeamMemberSocialMedia);
+    public record CreateTeamMemberDto(string FirstName, string LastName, string ImageUrl, string Title, bool Status, int TeamMemberSocialMediaId);
 }

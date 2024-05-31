@@ -1,0 +1,58 @@
+﻿@model UpdateTeamMemberDto
+@{
+    ViewData["Title"] = "UpdateTeamMember";
+    Layout = "~/Areas/MilkyAdmin/Views/Layout/Index.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="card-header">
+        <h6 class="card-title">
+            <b>Update TeamMember</b>
+        </h6>
+    </div>
+    <div class="card-body">
+        <form role="form" method="post" action="/MilkyAdmin/TeamMember/UpdateTeamMember">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="text-danger">Name</label>
+                        <input type="hidden" class="form-control" placeholder="name" asp-for="TeamMemberId">
+
+                        <input type="text" class="form-control" placeholder="name" asp-for="FirstName">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="text-danger">Name</label>
+                        <input type="text" class="form-control" placeholder="Surname" asp-for="LastName">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="text-danger">Title</label>
+                        <input type="text" class="form-control" placeholder="title" asp-for="Title">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="text-danger">Image Url</label>
+                        <input type="text" class="form-control" placeholder="image url" asp-for="ImageUrl">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="text-danger">Team Member Social Media Id</label>
+                        <input type="text" class="form-control" placeholder="team member social media id" asp-for="TeamMemberSocialMediaId">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="text-danger">Status</label>
+                        <input type="text" class="form-control" placeholder="status" asp-for="Status">
+                    </div>
+                </div>
+            </div>
+            <button style="margin-top:1rem" type="submit" class="btn btn-outline-success col-md-12">Update New TeamMember</button>
+        </form>
+    </div>
+</div>
