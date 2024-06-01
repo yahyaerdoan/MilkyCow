@@ -1,0 +1,44 @@
+﻿@model CreateTeamMemberSocialMediaDto
+@{
+    ViewData["Title"] = "CreateTeamMemberSocialMediaSocialMedia";
+    Layout = "~/Areas/MilkyAdmin/Views/Layout/Index.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="card-header">
+        <h6 class="card-title">
+            <b>Create TeamMemberSocialMedia</b>
+        </h6>
+    </div>
+    <div class="card-body">
+        <form role="form" method="post" action="/MilkyAdmin/TeamMemberSocialMedia/CreateTeamMemberSocialMedia">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="text-danger">Account Name</label>
+                        <input type="text" class="form-control" placeholder="account name" asp-for="AccountName">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="text-danger">Account Url</label>
+                        <input type="text" class="form-control" placeholder="account url" asp-for="AccountUrl">
+                    </div>
+                </div>            
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="text-danger">Icon Url</label>
+                        <input type="text" class="form-control" placeholder="icon url" asp-for="Icon">
+                    </div>
+                </div>            
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="text-danger">Status</label>
+                        <input type="text" class="form-control" placeholder="status" asp-for="Status">
+                    </div>
+                </div>
+            </div>
+            <button style="margin-top:1rem" type="submit" class="btn btn-outline-success col-md-12">Create New TeamMemberSocialMedia</button>
+        </form>
+    </div>
+</div>

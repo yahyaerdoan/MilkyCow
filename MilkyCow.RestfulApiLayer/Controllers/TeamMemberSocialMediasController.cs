@@ -32,7 +32,7 @@ namespace MilkyCow.RestfulApiLayer.Controllers
 		public ActionResult GetTeamMemberSocialMediaById(int id)
 		{
 			var values = _serviceManger.TeamMemberSocialMediaService.GetById(id);
-			var resultDtos = _mapper.Map<IEnumerable<ResultTeamMemberSocialMediaDto>>(values);
+			var resultDtos = _mapper.Map<TeamMemberSocialMedia,ResultTeamMemberSocialMediaDto>(values);
 			return Ok(resultDtos);
 		}
 
