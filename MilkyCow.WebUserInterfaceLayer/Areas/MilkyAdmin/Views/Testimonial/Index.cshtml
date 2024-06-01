@@ -1,0 +1,59 @@
+﻿@model List<ResultTestimonialDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/MilkyAdmin/Views/Layout/Index.cshtml";
+}
+
+@{
+    int count = 0;
+}
+<div class="container-fluid">
+    <div class="card-header">
+        <h3 class="card-title">
+            <b>Testimonial List</b>
+        </h3>
+    </div>
+    <div class="card-body table-responsive p-0">
+        <table class="table table-hover text-decoration-none">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Id</th>
+                    <th>FirstName</th>
+                    <th>LastName</th>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Image Url</th>
+                    <th>Status</th>
+                    <th>Update</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    count++;
+                    <tr>
+                        <td><b>@count</b></td>
+                        <td>@item.TestimonialId</td>
+                        <td class="text-danger">@item.FirstName</td>
+                        <td class="text-danger">@item.LastName</td>
+                        <td>@item.Title</td>
+                        <td>@item.Description</td>
+                        <td>@item.ImageUrl</td>
+                        <td>@item.Status</td>
+                        <td>
+                            <a href="/MilkyAdmin/Testimonial/UpdateTestimonial/@item.TestimonialId" class="btn btn-outline-primary sm">Update</a>
+                        </td>
+                        <td>
+                            <a href="/MilkyAdmin/Testimonial/DeleteTestimonial/@item.TestimonialId" class="btn btn-outline-danger sm">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <div style="margin-top:1rem">
+            <a href="/MilkyAdmin/Testimonial/CreateTestimonial" class="btn btn-outline-primary col-md-12">Create New Testimonial</a>
+        </div>
+    </div>
+</div>

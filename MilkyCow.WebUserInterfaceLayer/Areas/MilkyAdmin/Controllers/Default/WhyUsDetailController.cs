@@ -22,7 +22,7 @@ namespace MilkyCow.WebUserInterfaceLayer.Areas.MilkyAdmin.Controllers.Default
         }
         public async Task<IActionResult> Index()
         {
-            var values = await _resultWhyUsDetailDto.GetListAsync("WhyUsDetail/WhyUsDetailList");
+            var values = await _resultWhyUsDetailDto.GetListAsync("WhyUsDetails/WhyUsDetailList");
             return View(values);
         }
 
@@ -35,7 +35,7 @@ namespace MilkyCow.WebUserInterfaceLayer.Areas.MilkyAdmin.Controllers.Default
         [HttpPost]
         public async Task<IActionResult> CreateWhyUsDetail(CreateWhyUsDetailDto createWhyUsDetailDto)
         {
-            var values = await _createWhyUsDetailDto.PostAsync("WhyUsDetail/CreateWhyUsDetail", createWhyUsDetailDto);
+            var values = await _createWhyUsDetailDto.PostAsync("WhyUsDetails/CreateWhyUsDetail", createWhyUsDetailDto);
             if (values > 0)
             {
                 return RedirectToAction("Index");
@@ -46,14 +46,14 @@ namespace MilkyCow.WebUserInterfaceLayer.Areas.MilkyAdmin.Controllers.Default
         [HttpGet]
         public async Task<IActionResult> UpdateWhyUsDetail(int id)
         {
-            var values = await _updateWhyUsDetailDto.GetByIdAsync("WhyUsDetail/GetWhyUsDetailById", id);
+            var values = await _updateWhyUsDetailDto.GetByIdAsync("WhyUsDetails/GetWhyUsDetailById", id);
             return View(values);
         }
 
         [HttpPost]
         public async Task<IActionResult> UpdateWhyUsDetail(UpdateWhyUsDetailDto updateWhyUsDetailDto)
         {
-            var values = await _createWhyUsDetailDto.PutAsync("WhyUsDetail/UpdateWhyUsDetail", updateWhyUsDetailDto);
+            var values = await _createWhyUsDetailDto.PutAsync("WhyUsDetails/UpdateWhyUsDetail", updateWhyUsDetailDto);
             if (values > 0)
             {
                 return RedirectToAction("Index");
@@ -62,7 +62,7 @@ namespace MilkyCow.WebUserInterfaceLayer.Areas.MilkyAdmin.Controllers.Default
         }
         public async Task<IActionResult> DeleteWhyUsDetail(int id)
         {
-            var values = await _object.DeleteAsync("WhyUsDetail/DeleteWhyUsDetail", id);
+            var values = await _object.DeleteAsync("WhyUsDetails/DeleteWhyUsDetail", id);
             if (values > 0)
             {
                 return RedirectToAction("Index");

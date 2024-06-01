@@ -1,0 +1,34 @@
+﻿@model CreateWhyUsDto
+@{
+    ViewData["Title"] = "CreateWhyUs";
+    Layout = "~/Areas/MilkyAdmin/Views/Layout/Index.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="card-header">
+        <h6 class="card-title">
+            <b>Create WhyUs</b>
+        </h6>
+    </div>
+    <div class="card-body">
+        <form role="form" method="post" action="/MilkyAdmin/WhyUs/CreateWhyUs">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="text-danger">Title</label>
+                        <input type="text" class="form-control" placeholder="title" asp-for="Title">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <label class="text-danger">Description</label>
+                        <textarea type="text" class="form-control" placeholder="descriptions" rows="6" asp-for="Description"></textarea>
+                    </div>
+                </div>
+            </div>
+            <button style="margin-top:1rem" type="submit" class="btn btn-outline-success col-md-12">Create New WhyUs</button>
+        </form>
+    </div>
+</div>
