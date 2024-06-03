@@ -8,7 +8,6 @@
         public string ImageUrl { get; set; }
         public string Title { get; set; }
         public bool Status { get; set; }
-        public int TeamMemberSocialMediaId { get; set; }
-        public virtual TeamMemberSocialMedia TeamMemberSocialMedia { get; set; }
+        public virtual List<TeamMemberSocialMedia> TeamMemberSocialMedias { get; set; }
     }
 }

@@ -7,6 +7,8 @@
         public string AccountUrl { get; set; }
         public string Icon { get; set; }
         public bool Status { get; set; }
-        public virtual List<TeamMember> TeamMembers { get; set; }
+
+        public int TeamMemberId { get; set; }
+        public virtual TeamMember TeamMember { get; set; }
     }
 }
