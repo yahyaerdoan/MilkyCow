@@ -14,7 +14,7 @@ namespace MilkyCow.WebUserInterfaceLayer.Controllers
             _httpClientFactory = httpClientFactory;
         }
 
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> IndexNotUsing()
         {
             var client = _httpClientFactory.CreateClient();
             var responseMessage = await client.GetAsync("https://localhost:44367/api/Product");

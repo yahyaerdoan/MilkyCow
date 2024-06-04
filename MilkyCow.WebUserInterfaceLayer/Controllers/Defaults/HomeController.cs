@@ -6,6 +6,8 @@ namespace MilkyCow.WebUserInterfaceLayer.Controllers.Defaults
     {
         public IActionResult Default()
         {
+            ViewData["ActiveController"] = "Home";
+            ViewData["ActiveAction"] = "Default";
             return View();
         }
     }
