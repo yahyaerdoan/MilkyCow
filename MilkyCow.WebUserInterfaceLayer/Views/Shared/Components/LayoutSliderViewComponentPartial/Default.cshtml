@@ -1,34 +1,37 @@
-﻿<div class="container-fluid px-0 mb-5">
+﻿@model List<ResultSliderDto>
+@{
+    int count = 0;
+    string classActivated = "";
+}
+<div class="container-fluid px-0 mb-5">
     <div id="header-carousel" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img class="w-100" src="~/template/dairy-website-template/img/carousel-1.jpg" alt="Image">
-                <div class="carousel-caption">
-                    <div class="container">
-                        <div class="row justify-content-start">
-                            <div class="col-lg-8 text-start">
-                                <p class="fs-4 text-white">Welcome to our dairy farm</p>
-                                <h1 class="display-1 text-white mb-5 animated slideInRight">The Farm of Dairy products</h1>
-                                <a href="" class="btn btn-secondary rounded-pill py-3 px-5 animated slideInRight">Explore More</a>
+            @foreach (var item in Model)
+            {
+                count++;
+                if (count==1)
+                {
+                    classActivated = "carousel-item active";
+                }else
+                {
+                    classActivated = "carousel-item";
+                }
+                <div class="@classActivated">
+                    <img class="w-100" src="@item.ImageUrl" alt="Image">
+                    <div class="carousel-caption">
+                        <div class="container">
+                            <div class="row justify-content-start">
+                                <div class="col-lg-8 text-start">
+                                    <p class="fs-4 text-white">@item.Header</p>
+                                    <h1 class="display-1 text-white mb-5 animated slideInRight">@item.Title</h1>
+                                    <a href="/Product/Index" class="btn btn-secondary rounded-pill py-3 px-5 animated slideInRight">Explore More</a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="carousel-item">
-                <img class="w-100" src="~/template/dairy-website-template/img/carousel-2.jpg" alt="Image">
-                <div class="carousel-caption">
-                    <div class="container">
-                        <div class="row justify-content-end">
-                            <div class="col-lg-8 text-end">
-                                <p class="fs-4 text-white">Welcome to our dairy farm</p>
-                                <h1 class="display-1 text-white mb-5 animated slideInRight">Best Organic Dairy Products</h1>
-                                <a href="" class="btn btn-secondary rounded-pill py-3 px-5 animated slideInLeft">Explore More</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
+            }
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#header-carousel"
                 data-bs-slide="prev">
