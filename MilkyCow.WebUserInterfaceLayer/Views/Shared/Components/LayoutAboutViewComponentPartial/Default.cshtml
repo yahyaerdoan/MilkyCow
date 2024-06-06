@@ -1,4 +1,5 @@
-﻿<div class="container-xxl py-5">
+﻿@model List<ResultAboutUsDto>
+<div class="container-xxl py-5">
     <div class="container">
         <div class="row g-5 align-items-end">
             <div class="col-lg-6">
@@ -22,21 +23,24 @@
             </div>
             <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
                 <p class="section-title bg-white text-start text-primary pe-3">About Us</p>
-                <h1 class="mb-4">Know About Our Dairy Farm & Our History</h1>
-                <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>
+                @foreach (var item in Model)
+                {
+                    <h1 class="mb-4">@item.Title</h1>
+                    <p class="mb-4">@item.Description</p>
+                }                
                 <div class="row g-5 pt-2 mb-5">
                     <div class="col-sm-6">
                         <img class="img-fluid mb-4" src="~/template/dairy-website-template/img/service.png" alt="">
                         <h5 class="mb-3">Dedicated Services</h5>
-                        <span>Clita erat ipsum et lorem et sit, sed stet lorem sit clita</span>
+                        <span>Our dedicated services ensure that every aspect of your dairy experience is seamless and satisfying, from farm-fresh deliveries to personalized customer support. We prioritize quality and consistency, making sure our products and service meet the highest standards every time.</span>
                     </div>
                     <div class="col-sm-6">
                         <img class="img-fluid mb-4" src="~/template/dairy-website-template/img/product.png" alt="">
                         <h5 class="mb-3">Organic Products</h5>
-                        <span>Clita erat ipsum et lorem et sit, sed stet lorem sit clita</span>
+                        <span>Our organic products are produced with the highest standards of sustainability and care, free from synthetic pesticides and chemicals. We believe in nurturing the environment and our community by offering healthy, natural, and delicious dairy options for your family.</span>
                     </div>
                 </div>
-                <a class="btn btn-secondary rounded-pill py-3 px-5" href="">Explore More</a>
+                <a class="btn btn-secondary rounded-pill py-3 px-5" href="/Product/Index">Explore More</a>
             </div>
         </div>
     </div>
