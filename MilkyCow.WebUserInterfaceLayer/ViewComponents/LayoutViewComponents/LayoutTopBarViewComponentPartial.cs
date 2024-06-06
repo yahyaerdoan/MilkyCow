@@ -1,12 +1,22 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using MilkyCow.DataTransferObjectLayer.Concrete.SocialMediaDtos;
+using MilkyCow.WebUserInterfaceLayer.Extensions.DynamicBaseConsume;
 
 namespace MilkyCow.WebUserInterfaceLayer.ViewComponents.LayoutViewComponents
 {
     public class LayoutTopBarViewComponentPartial : ViewComponent
     {
-        public IViewComponentResult Invoke()
+        private readonly DynamicConsume<ResultSocialMediaDto> _resultSocialMediaDto;
+
+        public LayoutTopBarViewComponentPartial(DynamicConsume<ResultSocialMediaDto> resultSocialMediaDto)
         {
-            return View();
+            _resultSocialMediaDto = resultSocialMediaDto;
+        }
+
+        public async Task<IViewComponentResult> InvokeAsync()
+        {
+            var values = await _resultSocialMediaDto.GetListAsync("SocialMedias/SocialMediaList");
+            return View(values);
         }
     }
 }
