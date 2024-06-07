@@ -42,14 +42,16 @@
                         <label class="text-danger">Email</label>
                         <input type="text" class="form-control" placeholder="email" asp-for="Email">
                     </div>
-                </div>
-                <div class="col-sm-6">
+                </div>               
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
                     <div class="form-group">
                         <label class="text-danger">MapLocation</label>
-                        <input type="text" class="form-control" placeholder="map location" asp-for="MapLocation">
+                        <textarea type="text" class="form-control" placeholder="descriptions" rows="6" asp-for="MapLocation"></textarea>
                     </div>
                 </div>
-            </div>           
+            </div>
             <button style="margin-top:1rem" type="submit" class="btn btn-outline-success col-md-12">Create New Address</button>
         </form>
     </div>
