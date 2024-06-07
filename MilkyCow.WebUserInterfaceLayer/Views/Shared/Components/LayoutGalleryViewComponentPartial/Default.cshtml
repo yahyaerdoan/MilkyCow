@@ -1,120 +1,37 @@
-﻿  <div class="container-xxl py-5 px-0">
-        <div class="row g-0">
-            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                <div class="row g-0">
-                    <div class="col-12">
-                        <a class="d-block" href="img/gallery-5.jpg" data-lightbox="gallery">
-                            <img class="img-fluid" src="~/template/dairy-website-template/img/gallery-5.jpg" alt="">
-                        </a>
-                    </div>
-                    <div class="col-12">
-                        <a class="d-block" href="img/gallery-1.jpg" data-lightbox="gallery">
-                            <img class="img-fluid" src="~/template/dairy-website-template/img/gallery-1.jpg" alt="">
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                <div class="row g-0">
-                    <div class="col-12">
-                        <a class="d-block" href="img/gallery-2.jpg" data-lightbox="gallery">
-                            <img class="img-fluid" src="~/template/dairy-website-template/img/gallery-2.jpg" alt="">
-                        </a>
-                    </div>
-                    <div class="col-12">
-                        <a class="d-block" href="img/gallery-6.jpg" data-lightbox="gallery">
-                            <img class="img-fluid" src="~/template/dairy-website-template/img/gallery-6.jpg" alt="">
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                <div class="row g-0">
-                    <div class="col-12">
-                        <a class="d-block" href="img/gallery-7.jpg" data-lightbox="gallery">
-                            <img class="img-fluid" src="~/template/dairy-website-template/img/gallery-7.jpg" alt="">
-                        </a>
-                    </div>
-                    <div class="col-12">
-                        <a class="d-block" href="img/gallery-3.jpg" data-lightbox="gallery">
-                            <img class="img-fluid" src="~/template/dairy-website-template/img/gallery-3.jpg" alt="">
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
-                <div class="row g-0">
-                    <div class="col-12">
-                        <a class="d-block" href="img/gallery-4.jpg" data-lightbox="gallery">
-                            <img class="img-fluid" src="~/template/dairy-website-template/img/gallery-4.jpg" alt="">
-                        </a>
-                    </div>
-                    <div class="col-12">
-                        <a class="d-block" href="img/gallery-8.jpg" data-lightbox="gallery">
-                            <img class="img-fluid" src="~/template/dairy-website-template/img/gallery-8.jpg" alt="">
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-</div>
+﻿@model List<ResultGalleryDto> // Replace with your actual model
+@{
+    var delayIncrement = 0.2; // Increment for each delay in seconds
+    var initialDelay = 0.1; // Initial delay in seconds
+    var index = 0;
+
+    var pairs = new List<(string FirstImage, string SecondImage)>
+    {
+        (Model[4].ImageUrl, Model[0].ImageUrl),
+        (Model[1].ImageUrl, Model[5].ImageUrl),
+        (Model[6].ImageUrl, Model[2].ImageUrl),
+        (Model[3].ImageUrl, Model[7].ImageUrl)
+    };
+}
 <div class="container-xxl py-5 px-0">
     <div class="row g-0">
-        <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-            <div class="row g-0">
-                <div class="col-12">
-                    <a class="d-block" href="img/gallery-5.jpg" data-lightbox="gallery">
-                        <img class="img-fluid" src="~/template/dairy-website-template/img/gallery-5.jpg" alt="">
-                    </a>
-                </div>
-                <div class="col-12">
-                    <a class="d-block" href="img/gallery-1.jpg" data-lightbox="gallery">
-                        <img class="img-fluid" src="~/template/dairy-website-template/img/gallery-1.jpg" alt="">
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-            <div class="row g-0">
-                <div class="col-12">
-                    <a class="d-block" href="img/gallery-2.jpg" data-lightbox="gallery">
-                        <img class="img-fluid" src="~/template/dairy-website-template/img/gallery-2.jpg" alt="">
-                    </a>
-                </div>
-                <div class="col-12">
-                    <a class="d-block" href="img/gallery-6.jpg" data-lightbox="gallery">
-                        <img class="img-fluid" src="~/template/dairy-website-template/img/gallery-6.jpg" alt="">
-                    </a>
+        @foreach (var pair in pairs)
+        {
+            var delay = initialDelay + (index * delayIncrement);
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="@delay.ToString("0.0")s">
+                <div class="row g-0">
+                    <div class="col-12">
+                        <a class="d-block" href="@pair.FirstImage" data-lightbox="gallery">
+                            <img class="img-fluid" src="@pair.FirstImage" alt="">
+                        </a>
+                    </div>
+                    <div class="col-12">
+                        <a class="d-block" href="@pair.SecondImage" data-lightbox="gallery">
+                            <img class="img-fluid" src="@pair.SecondImage" alt="">
+                        </a>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-            <div class="row g-0">
-                <div class="col-12">
-                    <a class="d-block" href="img/gallery-7.jpg" data-lightbox="gallery">
-                        <img class="img-fluid" src="~/template/dairy-website-template/img/gallery-7.jpg" alt="">
-                    </a>
-                </div>
-                <div class="col-12">
-                    <a class="d-block" href="img/gallery-3.jpg" data-lightbox="gallery">
-                        <img class="img-fluid" src="~/template/dairy-website-template/img/gallery-3.jpg" alt="">
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
-            <div class="row g-0">
-                <div class="col-12">
-                    <a class="d-block" href="img/gallery-4.jpg" data-lightbox="gallery">
-                        <img class="img-fluid" src="~/template/dairy-website-template/img/gallery-4.jpg" alt="">
-                    </a>
-                </div>
-                <div class="col-12">
-                    <a class="d-block" href="img/gallery-8.jpg" data-lightbox="gallery">
-                        <img class="img-fluid" src="~/template/dairy-website-template/img/gallery-8.jpg" alt="">
-                    </a>
-                </div>
-            </div>
-        </div>
+            index++;
+        }
     </div>
 </div>
