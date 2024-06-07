@@ -1,0 +1,8 @@
+﻿@model List<ResultBusinessHourDto>
+<h5 class="text-white mb-4">Business Hours</h5>
+
+@foreach (var item in Model)
+{
+    <p class="mb-1">@item.Day</p>
+    <h6 class="text-light">@item.Hour</h6>
+}

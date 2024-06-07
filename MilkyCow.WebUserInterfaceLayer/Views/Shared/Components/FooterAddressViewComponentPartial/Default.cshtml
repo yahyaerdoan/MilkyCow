@@ -1,0 +1,10 @@
+﻿@model List<ResultAddressDto>
+@foreach (var item in Model)
+{
+    <p class="mb-2">
+        <i class="fa fa-map-marker-alt me-3"></i>
+        @item.Street, @item.City, <span style="padding-left: 2rem;">@item.Country</span>
+    </p>
+    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>@item.Phone</p>
+    <p class="mb-2"><i class="fa fa-envelope me-3"></i>@item.Email</p>
+}

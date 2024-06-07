@@ -1,0 +1,5 @@
+﻿@model List<ResultSocialMediaDto>
+@foreach (var item in Model)
+{
+    <a class="btn btn-square btn-secondary rounded-circle me-2" href="@item.AccountUrl"><i class="@item.Icon"></i></a>
+}
