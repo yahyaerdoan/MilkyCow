@@ -23,7 +23,7 @@ namespace MilkyCow.WebUserInterfaceLayer.Areas.MilkyAdmin.Controllers.Default
 
         public async Task<IActionResult> Index()
         {
-            var values = await _resultProductDto.GetListAsync("Products/ProductList");
+            var values = await _resultProductDto.GetListAsync("Products/GetProductsWithCategory");
             return View(values);
         }
 

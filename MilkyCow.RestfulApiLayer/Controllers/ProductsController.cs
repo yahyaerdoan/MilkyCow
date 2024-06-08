@@ -59,8 +59,8 @@ namespace MilkyCow.WebApi.Controllers
 			return Ok("Product updated.");
 		}
 
-		[HttpGet("GetProductWithCategory")]
-        public ActionResult GetProductWithCategory()
+		[HttpGet("GetProductsWithCategory")]
+        public ActionResult GetProductsWithCategory()
         {
             var values = _serviceManger.ProductService.GetProductWithCategory();
 			var resultDtos = _mapper.Map<IEnumerable<ResultProductDto>>(values);
