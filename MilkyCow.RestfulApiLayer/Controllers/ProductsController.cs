@@ -40,14 +40,26 @@ namespace MilkyCow.WebApi.Controllers
 		[HttpPost("CreateProduct")]
 		public ActionResult CreateProduct(CreateProductDto createProductDto)
         {
-            var categories = _serviceManger.CategoryService.GetAll();
-			var category = categories.FirstOrDefault(c => c.CategoryId.Equals(createProductDto.CategoryId));
+            #region Creating Product Refactored, Moved to business manager
 
-            var product = _mapper.Map<Product>(createProductDto);
-			product.CategoryId = category.CategoryId;
+            //var categories = _serviceManger.CategoryService.GetAll();
+            //var category = categories.FirstOrDefault(c => c.CategoryId.Equals(createProductDto.CategoryId));
 
-			_serviceManger.ProductService.Add(product);
-			return Ok("Product added.");
+            //var product = _mapper.Map<Product>(createProductDto);
+            //product.CategoryId = category.CategoryId;
+
+            //_serviceManger.ProductService.Add(product);
+
+            #endregion
+
+            var result = _serviceManger.ProductService.CreateProduct(createProductDto);
+
+            if (result == "Invalid Category.")
+            {
+                return BadRequest(result);
+            }
+
+            return Ok(result);
 		}
 
 		[HttpDelete("DeleteProduct/{id}")]
