@@ -46,7 +46,14 @@
                 <div class="col-sm-6">
                     <div class="form-group">
                         <label class="text-danger">Category Name</label>
-                        <input type="text" class="form-control" placeholder="Category Id" asp-for="CategoryId">
+                        <select asp-for="CategoryId" class="form-control">
+                            <option value="" selected disabled style="color:red">Select a Category</option>
+
+                            @foreach (var category in ViewBag.Categories)
+                            {
+                                <option value="@category.CategoryId">@category.Name</option>
+                            }
+                        </select>
                     </div>
                 </div>
             </div>

@@ -13,7 +13,7 @@ namespace MilkyCow.DataTransferObjectLayer.Concrete.ProductDtos
             decimal LastPrice,
             decimal NewPrice,
             string? Image,
-            bool Status, int?
-            CategoryId        
+            bool Status, 
+            int? CategoryId            
     );
 }

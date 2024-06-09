@@ -38,10 +38,15 @@ namespace MilkyCow.WebApi.Controllers
 		}
 
 		[HttpPost("CreateProduct")]
-		public ActionResult CreateBanner(CreateProductDto createProductDto)
-		{
-			var values = _mapper.Map<Product>(createProductDto);
-			_serviceManger.ProductService.Add(values);
+		public ActionResult CreateProduct(CreateProductDto createProductDto)
+        {
+            var categories = _serviceManger.CategoryService.GetAll();
+			var category = categories.FirstOrDefault(c => c.CategoryId.Equals(createProductDto.CategoryId));
+
+            var product = _mapper.Map<Product>(createProductDto);
+			product.CategoryId = category.CategoryId;
+
+			_serviceManger.ProductService.Add(product);
 			return Ok("Product added.");
 		}
 
@@ -51,11 +56,17 @@ namespace MilkyCow.WebApi.Controllers
 			_serviceManger.ProductService.Delete(id);
 			return Ok("Product deleted.");
 		}
+
 		[HttpPut("UpdateProduct")]
 		public ActionResult UpdateProduct(UpdateProductDto updateProductDto)
 		{
-			var values = _mapper.Map<Product>(updateProductDto);
-			_serviceManger.ProductService.Update(values);
+            var categories = _serviceManger.CategoryService.GetAll();
+            var category = categories.FirstOrDefault(c => c.CategoryId.Equals(updateProductDto.CategoryId));
+
+            var product = _mapper.Map<Product>(updateProductDto);
+			product.CategoryId = category.CategoryId;
+
+			_serviceManger.ProductService.Update(product);
 			return Ok("Product updated.");
 		}
 

@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using MilkyCow.DataTransferObjectLayer.Concrete.CategoryDtos;
 using MilkyCow.DataTransferObjectLayer.Concrete.ProductDtos;
 using MilkyCow.WebUserInterfaceLayer.Extensions.DynamicBaseConsume;
 
@@ -13,12 +14,15 @@ namespace MilkyCow.WebUserInterfaceLayer.Areas.MilkyAdmin.Controllers.Default
         private readonly DynamicConsume<UpdateProductDto> _updateProductDto;
         private readonly DynamicConsume<object> _object;
 
-        public ProductController(DynamicConsume<ResultProductDto> resultProductDto, DynamicConsume<CreateProductDto> createProductDto, DynamicConsume<UpdateProductDto> updateProductDto, DynamicConsume<object> oobject)
+        private readonly DynamicConsume<ResultCategoryDto> _resultCategoryDto;
+
+        public ProductController(DynamicConsume<ResultProductDto> resultProductDto, DynamicConsume<CreateProductDto> createProductDto, DynamicConsume<UpdateProductDto> updateProductDto, DynamicConsume<object> oobject, DynamicConsume<ResultCategoryDto> resultCategoryDto)
         {
             _resultProductDto = resultProductDto;
             _createProductDto = createProductDto;
             _updateProductDto = updateProductDto;
             _object = oobject;
+            _resultCategoryDto = resultCategoryDto;
         }
 
         public async Task<IActionResult> Index()
@@ -28,8 +32,10 @@ namespace MilkyCow.WebUserInterfaceLayer.Areas.MilkyAdmin.Controllers.Default
         }
 
         [HttpGet]
-        public IActionResult CreateProduct()
+        public async Task<IActionResult> CreateProduct()
         {
+            var categories = await _resultCategoryDto.GetListAsync("Categories/CategoryList");
+            ViewBag.Categories = categories;
             return View();
         }
 
@@ -47,6 +53,8 @@ namespace MilkyCow.WebUserInterfaceLayer.Areas.MilkyAdmin.Controllers.Default
         [HttpGet]
         public async Task<IActionResult> UpdateProduct(int id)
         {
+            var categories = await _resultCategoryDto.GetListAsync("Categories/CategoryList");
+            ViewBag.Categories = categories;
             var values = await _updateProductDto.GetByIdAsync("Products/GetProductById", id);
             return View(values);
         }
