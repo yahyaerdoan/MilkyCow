@@ -33,7 +33,17 @@
                         <td><b>@count</b></td>
                         <td>@item.GalleryId</td>
                         <td class="text-danger">@item.ImageUrl</td>
-                        <td>@item.Status</td>
+                        <td>
+                            @if (@item.Status)
+                            {
+                                <span style="color:green">Activated</span>
+
+                            }
+                            else
+                            {
+                                <span style="color:red">Pacified</span>
+                            }
+                        </td>
                         <td>
                             <a href="/MilkyAdmin/Gallery/UpdateGallery/@item.GalleryId" class="btn btn-outline-primary sm">Update</a>
                         </td>

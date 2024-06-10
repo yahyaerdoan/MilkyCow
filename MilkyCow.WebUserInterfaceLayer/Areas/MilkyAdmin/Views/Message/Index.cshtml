@@ -41,7 +41,17 @@
                         <td>@item.Subject</td>
                         <td>@item.Content</td>
                         <td>@item.SendingDate</td>
-                        <td>@item.IsRead</td>
+                        <td>
+                            @if (@item.IsRead)
+                            {
+                                <span style="color:green">Activated</span>
+
+                            }
+                            else
+                            {
+                                <span style="color:red">Pacified</span>
+                            }
+                        </td>
                         <td>
                             <a href="/MilkyAdmin/Message/UpdateMessage/@item.MessageId" class="btn btn-outline-primary sm">Update</a>
                         </td>

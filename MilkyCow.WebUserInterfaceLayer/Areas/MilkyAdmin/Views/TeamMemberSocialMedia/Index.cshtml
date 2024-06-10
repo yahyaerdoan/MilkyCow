@@ -39,7 +39,17 @@
                         <td>@item.AccountUrl</td>
                         <td>@item.Icon</td>
                         <td>@item.TeamMemberId</td>
-                        <td>@item.Status</td>
+                        <td>
+                            @if (@item.Status)
+                            {
+                                <span style="color:green">Activated</span>
+
+                            }
+                            else
+                            {
+                                <span style="color:red">Pacified</span>
+                            }
+                        </td>
                         <td>
                             <a href="/MilkyAdmin/TeamMemberSocialMedia/UpdateTeamMemberSocialMedia/@item.TeamMemberSocialMediaId" class="btn btn-outline-primary sm">Update</a>
                         </td>

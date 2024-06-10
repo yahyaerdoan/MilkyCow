@@ -37,7 +37,17 @@
                         <td class="text-danger">@item.FirstName @item.LastName</td>
                         <td>@item.Title</td>
                         <td>@item.ImageUrl</td>
-                        <td>@item.Status</td>
+                        <td>
+                            @if (@item.Status)
+                            {
+                                <span style="color:green">Activated</span>
+
+                            }
+                            else
+                            {
+                                <span style="color:red">Pacified</span>
+                            }
+                        </td>
                         <td>
                             <a href="/MilkyAdmin/TeamMember/UpdateTeamMember/@item.TeamMemberId" class="btn btn-outline-primary sm">Update</a>
                         </td>
