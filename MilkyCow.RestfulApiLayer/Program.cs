@@ -5,13 +5,17 @@ using MilkyCow.BusinessLayer.Extentensions;
 using MilkyCow.DataTransferObjectLayer.AutoMapper.EntityDtoMappers;
 using MilkyCow.BusinessLayer.Abstract.IServiceManager;
 using MilkyCow.BusinessLayer.Concrete.ServiceManager;
+using System;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddDbContext<DbContext, MilkyCowDbContext>();
-builder.Services.ContainerDependencyInjection();
 builder.Services.AddScoped<IServiceManager, ServiceManager>();
+builder.Services.AddScoped(provider =>
+    new Lazy<IServiceManager>(() => provider.GetRequiredService<IServiceManager>()));
+builder.Services.ContainerDependencyInjection();
+
 builder.Services.AddAutoMapper(typeof(MappingProfile));
 
 

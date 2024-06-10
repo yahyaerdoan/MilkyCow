@@ -23,12 +23,12 @@ namespace MilkyCow.BusinessLayer.Concrete.ServiceManager
         private readonly ISliderService _sliderService;
         private readonly ISocialMediaService _socialMediaService;
         private readonly ITeamMemberService _teamMemberService;
-        private readonly ITeamMemberSocialMediaService _teamMeberSocialMediaService;
+        private readonly ITeamMemberSocialMediaService _teamMemberSocialMediaService;
         private readonly ITestimonialService _testimonialService;
         private readonly IWhyUsService _whyUsService;
         private readonly IWhyUsDetailService _whyUsDetailService;
 
-        public ServiceManager(IAboutUsService aboutUsService, IAddressService addressService, IBannerService bannerService, IBusinessHourService businessHourService, ICategoryService categoryService, IGalleryService galleryService, IMessageService messageService, IOurServiceService ourServiceService, IProductService productService, IServiceTypeService serviceTypeService, ISliderService sliderService, ISocialMediaService socialMediaService, ITeamMemberService teamMemberService, ITeamMemberSocialMediaService teamMeberSocialMediaService, ITestimonialService testimonialService, IWhyUsService whyUsService, IWhyUsDetailService whyUsDetailService)
+        public ServiceManager(IAboutUsService aboutUsService, IAddressService addressService, IBannerService bannerService, IBusinessHourService businessHourService, ICategoryService categoryService, IGalleryService galleryService, IMessageService messageService, IOurServiceService ourServiceService, IProductService productService, IServiceTypeService serviceTypeService, ISliderService sliderService, ISocialMediaService socialMediaService, ITeamMemberService teamMemberService, ITeamMemberSocialMediaService teamMemberSocialMediaService, ITestimonialService testimonialService, IWhyUsService whyUsService, IWhyUsDetailService whyUsDetailService)
         {
             _aboutUsService = aboutUsService;
             _addressService = addressService;
@@ -43,7 +43,7 @@ namespace MilkyCow.BusinessLayer.Concrete.ServiceManager
             _sliderService = sliderService;
             _socialMediaService = socialMediaService;
             _teamMemberService = teamMemberService;
-            _teamMeberSocialMediaService = teamMeberSocialMediaService;
+            _teamMemberSocialMediaService = teamMemberSocialMediaService;
             _testimonialService = testimonialService;
             _whyUsService = whyUsService;
             _whyUsDetailService = whyUsDetailService;
@@ -75,7 +75,7 @@ namespace MilkyCow.BusinessLayer.Concrete.ServiceManager
 
         public ITeamMemberService TeamMemberService => _teamMemberService;
 
-        public ITeamMemberSocialMediaService TeamMemberSocialMediaService => _teamMeberSocialMediaService;
+        public ITeamMemberSocialMediaService TeamMemberSocialMediaService => _teamMemberSocialMediaService;
 
         public ITestimonialService TestimonialService => _testimonialService;
 

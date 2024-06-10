@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using MilkyCow.BusinessLayer.Abstract.IAbstractService;
+using MilkyCow.BusinessLayer.Abstract.IServiceManager;
 using MilkyCow.DataAccessLayer.Abstract.IAbstractDal;
 using MilkyCow.DataTransferObjectLayer.Concrete.ProductDtos;
 using MilkyCow.EntityLayer.Concrete;
@@ -9,20 +10,22 @@ namespace MilkyCow.BusinessLayer.Concrete.ConcreteManager
     public class ProductManager : IProductService
     {
         private readonly IProductDal _productDal;
-        private readonly ICategoryService _categoryService;
+        //private readonly ICategoryService _categoryService;
         private readonly IMapper _mapper;
+        private readonly Lazy<IServiceManager> _serviceManager;
 
-        public ProductManager(IProductDal productDal, ICategoryService categoryService = null, IMapper mapper = null)
+        public ProductManager(IProductDal productDal, IMapper mapper, Lazy<IServiceManager> serviceManager)
         {
             _productDal = productDal;
-            _categoryService = categoryService;
+
             _mapper = mapper;
+            _serviceManager = serviceManager;
         }
 
         #region Create Product
         public string CreateProduct(CreateProductDto createProductDto)
         {
-            var categories = _categoryService.GetAll();
+            var categories = _serviceManager.Value.CategoryService.GetAll();
             var category = categories.FirstOrDefault(c => c.CategoryId.Equals(createProductDto.CategoryId));
 
             if (category == null)
