@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using MilkyCow.DataAccessLayer.Abstact.IAbstractDal;
-using MilkyCow.DataAccessLayer.Abstact.IGenericRepository;
+using MilkyCow.DataAccessLayer.Abstract.IAbstractDal;
+using MilkyCow.DataAccessLayer.Abstract.IGenericRepository;
 using MilkyCow.DataAccessLayer.Concrete.Context;
 using MilkyCow.DataAccessLayer.Concrete.GenericRepository;
 using MilkyCow.EntityLayer.Concrete;

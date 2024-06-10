@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using MilkyCow.DataAccessLayer.Abstact.IGenericRepository;
+using MilkyCow.DataAccessLayer.Abstract.IGenericRepository;
 using MilkyCow.DataAccessLayer.Concrete.Context;
 using System;
 using System.Collections.Generic;

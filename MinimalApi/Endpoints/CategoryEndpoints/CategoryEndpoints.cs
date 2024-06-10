@@ -1,4 +1,4 @@
-﻿using MilkyCow.BusinessLayer.Abstact.IAbstractService;
+﻿using MilkyCow.BusinessLayer.Abstract.IAbstractService;
 
 namespace MilkyCow.MinimalApi.Endpoints.CategoryEndpoints
 {

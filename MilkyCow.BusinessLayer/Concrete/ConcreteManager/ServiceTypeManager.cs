@@ -1,5 +1,5 @@
-﻿using MilkyCow.BusinessLayer.Abstact.IAbstractService;
-using MilkyCow.DataAccessLayer.Abstact.IAbstractDal;
+﻿using MilkyCow.BusinessLayer.Abstract.IAbstractService;
+using MilkyCow.DataAccessLayer.Abstract.IAbstractDal;
 using MilkyCow.EntityLayer.Concrete;
 
 namespace MilkyCow.BusinessLayer.Concrete.ConcreteManager

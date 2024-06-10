@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using MilkyCow.BusinessLayer.Abstact.IAbstractService;
-using MilkyCow.BusinessLayer.Abstact.IServiceManager;
+using MilkyCow.BusinessLayer.Abstract.IAbstractService;
+using MilkyCow.BusinessLayer.Abstract.IServiceManager;
 using MilkyCow.DataTransferObjectLayer.Concrete.AddressDtos;
 using MilkyCow.DataTransferObjectLayer.Concrete.BannerDtos;
 using MilkyCow.EntityLayer.Concrete;

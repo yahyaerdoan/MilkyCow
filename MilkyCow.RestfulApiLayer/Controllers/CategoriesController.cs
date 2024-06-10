@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using MilkyCow.BusinessLayer.Abstact.IAbstractService;
+using MilkyCow.BusinessLayer.Abstract.IAbstractService;
 using MilkyCow.DataTransferObjectLayer.Concrete.CategoryDtos;
 using MilkyCow.EntityLayer.Concrete;
 

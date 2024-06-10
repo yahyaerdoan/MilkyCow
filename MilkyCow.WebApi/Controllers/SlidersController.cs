@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using MilkyCow.BusinessLayer.Abstact.IAbstractService;
+using MilkyCow.BusinessLayer.Abstract.IAbstractService;
 
 namespace MilkyCow.WebApi.Controllers
 {

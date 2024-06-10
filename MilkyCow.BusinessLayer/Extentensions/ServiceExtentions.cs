@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using MilkyCow.BusinessLayer.Abstact.IAbstractService;
+using MilkyCow.BusinessLayer.Abstract.IAbstractService;
 using MilkyCow.BusinessLayer.Concrete.ConcreteManager;
-using MilkyCow.DataAccessLayer.Abstact.IAbstractDal;
+using MilkyCow.DataAccessLayer.Abstract.IAbstractDal;
 using MilkyCow.DataAccessLayer.Concrete.EntityFramework;
 using System;
 using System.Collections.Generic;

@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
-using MilkyCow.BusinessLayer.Abstact.IAbstractService;
-using MilkyCow.DataAccessLayer.Abstact.IAbstractDal;
+using MilkyCow.BusinessLayer.Abstract.IAbstractService;
+using MilkyCow.DataAccessLayer.Abstract.IAbstractDal;
 using MilkyCow.DataTransferObjectLayer.Concrete.ProductDtos;
 using MilkyCow.EntityLayer.Concrete;
 

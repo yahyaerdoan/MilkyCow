@@ -1,4 +1,4 @@
-﻿using MilkyCow.BusinessLayer.Abstact.IAbstractService;
+﻿using MilkyCow.BusinessLayer.Abstract.IAbstractService;
 using MilkyCow.EntityLayer.Concrete;
 
 namespace MilkyCow.BusinessLayer.Concrete.ConcreteManager

@@ -3,7 +3,7 @@ using MilkyCow.DataAccessLayer.Concrete.Context;
 using System.Text.Json.Serialization;
 using MilkyCow.BusinessLayer.Extentensions;
 using MilkyCow.DataTransferObjectLayer.AutoMapper.EntityDtoMappers;
-using MilkyCow.BusinessLayer.Abstact.IServiceManager;
+using MilkyCow.BusinessLayer.Abstract.IServiceManager;
 using MilkyCow.BusinessLayer.Concrete.ServiceManager;
 
 var builder = WebApplication.CreateBuilder(args);

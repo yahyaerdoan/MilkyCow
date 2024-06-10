@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using MilkyCow.BusinessLayer.Abstact.IAbstractService;
+using MilkyCow.BusinessLayer.Abstract.IAbstractService;
 using MilkyCow.DataTransferObjectLayer.Concrete.AboutUsDtos;
 using MilkyCow.EntityLayer.Concrete;
 

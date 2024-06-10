@@ -5,7 +5,7 @@ using MilkyCow.DataAccessLayer.Concrete.Context;
 using Microsoft.OpenApi.Models;
 using MilkyCow.MinimalApi.Extensions.EndpointExtensions;
 using MilkyCow.MinimalApi.Endpoints.CategoryEndpoints;
-using MilkyCow.BusinessLayer.Abstact.IAbstractService;
+using MilkyCow.BusinessLayer.Abstract.IAbstractService;
 using MilkyCow.BusinessLayer.Concrete.ConcreteManager;
 
 var builder = WebApplication.CreateBuilder(args);

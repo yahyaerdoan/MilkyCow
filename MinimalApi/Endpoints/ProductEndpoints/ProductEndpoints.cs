@@ -1,5 +1,5 @@
-﻿using MilkyCow.BusinessLayer.Abstact.IAbstractService;
-using MilkyCow.BusinessLayer.Abstact.IServiceManager;
+﻿using MilkyCow.BusinessLayer.Abstract.IAbstractService;
+using MilkyCow.BusinessLayer.Abstract.IServiceManager;
 using MilkyCow.EntityLayer.Concrete;
 
 namespace MinimalApi.Endpoints.ProductEndpoints
