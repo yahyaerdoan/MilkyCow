@@ -12,19 +12,19 @@
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav ms-auto p-4 p-lg-0">
             <a href="/Home/Default" class="nav-item nav-link @(activeController == "Home" && activeAction == "Default" ? "active" : "")">Home</a>
-            <a href="/About/Index" class="nav-item nav-link  @ViewData["AboutActiveted"]">About</a>
-            <a href="/Service/Index" class="nav-item nav-link  @ViewData["ServiceActiveted"]">Services</a>
-            <a href="/Product/Index" class="nav-item nav-link @ViewData["ProductActiveted"]">Products</a>
+            <a href="/About/Index" class="nav-item nav-link  @ViewData["AboutActivated"]">About</a>
+            <a href="/Service/Index" class="nav-item nav-link  @ViewData["ServiceActivated"]">Services</a>
+            <a href="/Product/Index" class="nav-item nav-link @ViewData["ProductActivated"]">Products</a>
             <div class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                 <div class="dropdown-menu bg-light m-0">
-                    <a href="/Gallery/Index" class="dropdown-item @ViewData["GalleryActiveted"]">Galleries</a>
-                    <a href="/Feature/Index" class="dropdown-item @ViewData["FeatureActiveted"]">Features</a>
-                    <a href="/OurTeam/Index" class="dropdown-item @ViewData["OurTeamActiveted"]">Our Teams</a>
-                    <a href="/Testimonial/Index" class="dropdown-item @ViewData["TestimonialActiveted"]">Testimonials</a>
+                    <a href="/Gallery/Index" class="dropdown-item @ViewData["GalleryActivated"]">Galleries</a>
+                    <a href="/Feature/Index" class="dropdown-item @ViewData["FeatureActivated"]">Features</a>
+                    <a href="/OurTeam/Index" class="dropdown-item @ViewData["OurTeamActivated"]">Our Teams</a>
+                    <a href="/Testimonial/Index" class="dropdown-item @ViewData["TestimonialActivated"]">Testimonials</a>
                 </div>
             </div>
-            <a href="/Contact/Index" class="nav-item nav-link @ViewData["ContactActiveted"]">Contact</a>
+            <a href="/Contact/Index" class="nav-item nav-link @ViewData["ContactActivated"]">Contact</a>
         </div>
         <div class="border-start ps-4 d-none d-lg-block">
             <button type="button" class="btn btn-sm p-0"><i class="fa fa-search"></i></button>
