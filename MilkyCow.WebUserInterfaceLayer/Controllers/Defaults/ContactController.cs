@@ -1,16 +1,19 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MilkyCow.DataTransferObjectLayer.Concrete.MessageDtos;
 using MilkyCow.WebUserInterfaceLayer.Extensions.DynamicBaseConsume;
+using NToastNotify;
 
 namespace MilkyCow.WebUserInterfaceLayer.Controllers.Defaults
 {
     public class ContactController : Controller
     {
         private readonly DynamicConsume<CreateMessageDto>  _createMessageDto;
+        private readonly IToastNotification _toastNotification;
 
-        public ContactController(DynamicConsume<CreateMessageDto> createMessageDto)
+        public ContactController(DynamicConsume<CreateMessageDto> createMessageDto, IToastNotification toastNotification)
         {
             _createMessageDto = createMessageDto;
+            _toastNotification = toastNotification;
         }
 
         public IActionResult Index()
@@ -23,10 +26,14 @@ namespace MilkyCow.WebUserInterfaceLayer.Controllers.Defaults
             var values =  await _createMessageDto.PostAsync("Messages/CreateMessage", createMessageDto);
             if (values > 0)
             {
+                _toastNotification.AddSuccessToastMessage("Your message has been sent", 
+                    new ToastrOptions { Title = "Successfully!"});
                 return RedirectToAction("Default", "Home");
 
             }
-            return View(createMessageDto);
+            _toastNotification.AddErrorToastMessage("Your message hasn't been sent", 
+                new ToastrOptions { Title = "Error!" });
+            return RedirectToAction("Index", "Contact");
         }
     }
 }

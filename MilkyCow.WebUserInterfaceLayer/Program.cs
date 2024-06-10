@@ -1,10 +1,19 @@
 using MilkyCow.WebUserInterfaceLayer.Extensions.DynamicBaseConsume;
+using NToastNotify;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddHttpClient();
-builder.Services.AddControllersWithViews();
+builder.Services.AddControllersWithViews()
+    .AddNToastNotifyToastr(new ToastrOptions()
+    {
+        ProgressBar = true,
+        PositionClass = ToastPositions.TopCenter,
+        PreventDuplicates = true,
+        CloseButton = true
+    });
+
 builder.Services.AddScoped(typeof(DynamicConsume<>));
 builder.Services.AddRouting(options => options.LowercaseUrls = true);
 
@@ -37,4 +46,5 @@ app.UseEndpoints(endpoints =>
     );
 });
 
+app.UseNToastNotify();
 app.Run();
