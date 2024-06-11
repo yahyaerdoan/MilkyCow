@@ -43,7 +43,11 @@
                 <div class="col-sm-6">
                     <div class="form-group">
                         <label class="text-danger">Status</label>
-                        <input type="text" class="form-control" placeholder="status" asp-for="Status">
+                        <select class="form-control" asp-for="Status">
+                            <option value="" selected disabled style="color: red;">Select a status</option>
+                            <option value="true">Activated</option>
+                            <option value="false">Pacified</option>
+                        </select>
                     </div>
                 </div>
                 <div class="col-sm-6">
