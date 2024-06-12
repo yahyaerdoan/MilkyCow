@@ -32,6 +32,8 @@
                 @foreach (var item in Model)
                 {
                     count++;
+                    @ViewBag.teamMemberId
+
                     <tr>
                         <td><b>@count</b></td>
                         <td>@item.TeamMemberId</td>
@@ -49,10 +51,9 @@
                                 <span style="color:red">Pacified</span>
                             }
                         </td>
-                        @ViewBag.teamMemberId
                         <td>
-                            <a href="/MilkyAdmin/TeamMemberSocialMedia/TeamMemberSocialMediaList/@item.TeamMemberId?username=@item.FirstName + @item.LastName" 
-                            class="btn btn-outline-info sm">Social Media</a>
+                            <a href="/MilkyAdmin/TeamMemberSocialMedia/TeamMemberSocialMediaList/@item.TeamMemberId?username=@(item.FirstName + " " + item.LastName)"
+                               class="btn btn-outline-info sm">Social Media</a>
                         </td>
                         <td>
                             <a href="/MilkyAdmin/TeamMember/UpdateTeamMember/@item.TeamMemberId" class="btn btn-outline-primary sm">Update</a>

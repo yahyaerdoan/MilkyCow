@@ -40,7 +40,8 @@
                         <td class="text-danger">@item.AccountName</td>
                         <td>@item.AccountUrl</td>
                         <td>@item.Icon</td>
-                        <td>@ViewBag.UserName</td>
+                        <td>@item.TeamMember.FirstName @item.TeamMember.LastName</td>
+                        @* <td>@ViewBag.UserName</td> *@
                         <td>
                             @if (@item.Status)
                             {
