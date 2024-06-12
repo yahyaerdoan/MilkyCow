@@ -24,12 +24,11 @@ namespace MilkyCow.WebUserInterfaceLayer.Areas.MilkyAdmin.Controllers.Default
 
         public async Task<IActionResult> Index()
         {
-            var values = await _resultTeamMemberSocialMediaDto.GetListAsync("TeamMemberSocialMedias/TeamMemberSocialMediaList");
+            var values = await _resultTeamMemberSocialMediaDto.GetListAsync("TeamMemberSocialMedias/TeamMemberSocialMediaListWithTeamMember");
             return View(values);
         }
-        public async Task<IActionResult> TeamMemberSocialMediaList(int id, string username)
+        public async Task<IActionResult> TeamMemberSocialMediaList(int id)
         {
-            ViewBag.UserName = username;
             var values = await _resultTeamMemberSocialMediaDto.GetListByIdAsync("TeamMemberSocialMedias/TeamMemberSocialMediaListByTeamMember", id);
             if (values != null)
             {
@@ -39,10 +38,11 @@ namespace MilkyCow.WebUserInterfaceLayer.Areas.MilkyAdmin.Controllers.Default
         }
 
         [HttpGet]
-        public IActionResult CreateTeamMemberSocialMedia(int id, string username)
+        public async Task<IActionResult> CreateTeamMemberSocialMedia(int id)
         {
-            ViewBag.teamMemberId = id;
-            ViewBag.UserName = username;
+            var resultFullName = await _resultTeamMemberSocialMediaDto.GetByIdAsync("TeamMemberSocialMedias/TeamMemberSocialMediaByTeamMemberId", id);
+            ViewBag.TeamMemberFullName = $"{resultFullName.TeamMember.FirstName} {resultFullName.TeamMember.LastName}";
+            ViewBag.TeamMemberId = resultFullName.TeamMemberId;
             return View();
         }
 
@@ -59,17 +59,19 @@ namespace MilkyCow.WebUserInterfaceLayer.Areas.MilkyAdmin.Controllers.Default
         }
 
         [HttpGet]
-        public async Task<IActionResult> UpdateTeamMemberSocialMedia(int id, string username)
-        {
-            ViewBag.UserName = username;
+        public async Task<IActionResult> UpdateTeamMemberSocialMedia(int id)
+        {           
+         
             var values = await _updateTeamMemberSocialMediaDto.GetByIdAsync("TeamMemberSocialMedias/GetTeamMemberSocialMediaById", id);
+            var resultFullName = await _resultTeamMemberSocialMediaDto.GetByIdAsync("TeamMemberSocialMedias/TeamMemberSocialMediaByTeamMemberId", id);
+            ViewBag.TeamMemberFullName = $"{resultFullName.TeamMember.FirstName} {resultFullName.TeamMember.LastName}";
             return View(values);
         }
 
         [HttpPost]
         public async Task<IActionResult> UpdateTeamMemberSocialMedia(UpdateTeamMemberSocialMediaDto updateTeamMemberSocialMediaDto)
         {
-            var values = await _createTeamMemberSocialMediaDto.PutAsync("TeamMemberSocialMedias/UpdateTeamMemberSocialMedia", updateTeamMemberSocialMediaDto);
+            var values = await _updateTeamMemberSocialMediaDto.PutAsync("TeamMemberSocialMedias/UpdateTeamMemberSocialMedia", updateTeamMemberSocialMediaDto);
             if (values > 0)
             {
                 return RedirectToAction("Index");

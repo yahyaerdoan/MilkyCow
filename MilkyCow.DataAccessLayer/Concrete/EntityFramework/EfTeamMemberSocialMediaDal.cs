@@ -17,5 +17,17 @@ namespace MilkyCow.DataAccessLayer.Concrete.EntityFramework
             var values = _context.TeamMemberSocialMedias.Include(y=> y.TeamMember). Where(x=> x.TeamMemberId == id).ToList();
             return values;
         }
+
+        public TeamMemberSocialMedia GetTeamMemberSocialMediaByTeamMemberId(int id)
+        {
+            var values = _context.TeamMemberSocialMedias.Include(y => y.TeamMember).FirstOrDefault(x => x.TeamMemberId == id);
+            return values;
+        }
+
+        public List<TeamMemberSocialMedia> GetTeamMemberSocialMediaListWithTeamMember()
+        {
+            var values = _context.TeamMemberSocialMedias.Include(y => y.TeamMember).ToList();
+            return values;
+        }
     }
 }

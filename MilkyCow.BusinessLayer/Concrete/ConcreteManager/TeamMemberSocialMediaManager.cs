@@ -35,9 +35,21 @@ namespace MilkyCow.BusinessLayer.Concrete.ConcreteManager
             return values;
         }
 
+        public TeamMemberSocialMedia GetTeamMemberSocialMediaByTeamMemberId(int id)
+        {
+            var values = _teamMemberSocialMediaDal.GetTeamMemberSocialMediaByTeamMemberId(id);
+            return values;
+        }
+
         public List<TeamMemberSocialMedia> GetTeamMemberSocialMediaListByTeamMemberId(int id)
         {
             var values = _teamMemberSocialMediaDal.GetTeamMemberSocialMediaListByTeamMemberId(id);
+            return values;
+        }
+
+        public List<TeamMemberSocialMedia> GetTeamMemberSocialMediaListWithTeamMember()
+        {
+            var values = _teamMemberSocialMediaDal.GetTeamMemberSocialMediaListWithTeamMember();
             return values;
         }
 
