@@ -5,5 +5,6 @@ namespace MilkyCow.BusinessLayer.Abstract.IAbstractService
 {
     public interface ITeamMemberSocialMediaService : IGenericService<TeamMemberSocialMedia>
     {
+        List<TeamMemberSocialMedia> GetTeamMemberSocialMediaListByTeamMemberId(int id);
     }
 }

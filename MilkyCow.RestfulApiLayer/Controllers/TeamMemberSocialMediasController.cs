@@ -28,7 +28,15 @@ namespace MilkyCow.RestfulApiLayer.Controllers
 			return Ok(resultDtos);
 		}
 
-		[HttpGet("GetTeamMemberSocialMediaById/{id}")]
+        [HttpGet("TeamMemberSocialMediaListByTeamMember/{id}")]
+        public ActionResult GetTeamMemberSocialMediaListByTeamMemberId(int id)
+        {
+            var values = _serviceManger.TeamMemberSocialMediaService.GetTeamMemberSocialMediaListByTeamMemberId(id);
+            var resultDtos = _mapper.Map<IEnumerable<ResultTeamMemberSocialMediaDto>>(values);
+            return Ok(resultDtos);
+        }
+
+        [HttpGet("GetTeamMemberSocialMediaById/{id}")]
 		public ActionResult GetTeamMemberSocialMediaById(int id)
 		{
 			var values = _serviceManger.TeamMemberSocialMediaService.GetById(id);

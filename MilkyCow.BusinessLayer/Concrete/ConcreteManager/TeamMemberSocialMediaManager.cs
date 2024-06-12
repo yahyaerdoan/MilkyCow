@@ -35,6 +35,12 @@ namespace MilkyCow.BusinessLayer.Concrete.ConcreteManager
             return values;
         }
 
+        public List<TeamMemberSocialMedia> GetTeamMemberSocialMediaListByTeamMemberId(int id)
+        {
+            var values = _teamMemberSocialMediaDal.GetTeamMemberSocialMediaListByTeamMemberId(id);
+            return values;
+        }
+
         public void Update(TeamMemberSocialMedia entity)
         {
             _teamMemberSocialMediaDal.Update(entity);

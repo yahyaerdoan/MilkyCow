@@ -21,6 +21,14 @@ namespace MilkyCow.WebUserInterfaceLayer.Extensions.DynamicBaseConsume
             var response = await _httpClientFactory.CreateClient().GetFromJsonAsync<List<TEntity>>($"{configuration}/{link}");
             return (response ?? new List<TEntity>());
         }
+
+        public async Task<List<TEntity>> GetListByIdAsync(string link, int id)
+        {
+            var configuration = _configuration["AppSettings:BaseApiUrl"];
+            var response = await _httpClientFactory.CreateClient().GetFromJsonAsync<List<TEntity>>($"{configuration}/{link}/{id}");
+            return (response ?? new List<TEntity>());
+        }
+
         public async Task<TEntity> GetByIdAsync(string link, int id)
         {
             var configuration = _configuration["AppSettings:BaseApiUrl"];

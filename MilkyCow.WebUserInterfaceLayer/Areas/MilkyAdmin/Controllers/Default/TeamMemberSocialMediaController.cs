@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MilkyCow.DataTransferObjectLayer.Concrete.TeamMemberSocialMediaDtos;
+using MilkyCow.EntityLayer.Concrete;
 using MilkyCow.WebUserInterfaceLayer.Extensions.DynamicBaseConsume;
 
 namespace MilkyCow.WebUserInterfaceLayer.Areas.MilkyAdmin.Controllers.Default
@@ -13,12 +14,12 @@ namespace MilkyCow.WebUserInterfaceLayer.Areas.MilkyAdmin.Controllers.Default
         private readonly DynamicConsume<UpdateTeamMemberSocialMediaDto> _updateTeamMemberSocialMediaDto;
         private readonly DynamicConsume<object> _object;
 
-        public TeamMemberSocialMediaController(DynamicConsume<ResultTeamMemberSocialMediaDto> resultTeamMemberSocialMediaDto, DynamicConsume<CreateTeamMemberSocialMediaDto> createTeamMemberSocialMediaDto, DynamicConsume<UpdateTeamMemberSocialMediaDto> updateTeamMemberSocialMediaDto, DynamicConsume<object> oobject)
+        public TeamMemberSocialMediaController(DynamicConsume<ResultTeamMemberSocialMediaDto> resultTeamMemberSocialMediaDto, DynamicConsume<CreateTeamMemberSocialMediaDto> createTeamMemberSocialMediaDto, DynamicConsume<UpdateTeamMemberSocialMediaDto> updateTeamMemberSocialMediaDto, DynamicConsume<object> objects)
         {
             _resultTeamMemberSocialMediaDto = resultTeamMemberSocialMediaDto;
             _createTeamMemberSocialMediaDto = createTeamMemberSocialMediaDto;
             _updateTeamMemberSocialMediaDto = updateTeamMemberSocialMediaDto;
-            _object = oobject;
+            _object = objects;
         }
 
         public async Task<IActionResult> Index()
@@ -26,10 +27,22 @@ namespace MilkyCow.WebUserInterfaceLayer.Areas.MilkyAdmin.Controllers.Default
             var values = await _resultTeamMemberSocialMediaDto.GetListAsync("TeamMemberSocialMedias/TeamMemberSocialMediaList");
             return View(values);
         }
+        public async Task<IActionResult> TeamMemberSocialMediaList(int id, string username)
+        {
+            ViewBag.UserName = username;
+            var values = await _resultTeamMemberSocialMediaDto.GetListByIdAsync("TeamMemberSocialMedias/TeamMemberSocialMediaListByTeamMember", id);
+            if (values != null)
+            {
+                return View(values);
+            }
+            return View();
+        }
 
         [HttpGet]
-        public IActionResult CreateTeamMemberSocialMedia()
+        public IActionResult CreateTeamMemberSocialMedia(int id, string username)
         {
+            ViewBag.teamMemberId = id;
+            ViewBag.UserName = username;
             return View();
         }
 
@@ -46,8 +59,9 @@ namespace MilkyCow.WebUserInterfaceLayer.Areas.MilkyAdmin.Controllers.Default
         }
 
         [HttpGet]
-        public async Task<IActionResult> UpdateTeamMemberSocialMedia(int id)
+        public async Task<IActionResult> UpdateTeamMemberSocialMedia(int id, string username)
         {
+            ViewBag.UserName = username;
             var values = await _updateTeamMemberSocialMediaDto.GetByIdAsync("TeamMemberSocialMedias/GetTeamMemberSocialMediaById", id);
             return View(values);
         }

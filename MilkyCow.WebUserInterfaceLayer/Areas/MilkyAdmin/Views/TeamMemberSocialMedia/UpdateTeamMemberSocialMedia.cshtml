@@ -36,7 +36,9 @@
                 <div class="col-sm-6">
                     <div class="form-group">
                         <label class="text-danger">Team Member Id</label>
-                        <input type="text" class="form-control" placeholder="team tember id" asp-for="TeamMemberId">
+                        <input type="hidden" class="form-control" placeholder="team tember id" asp-for="TeamMemberId">
+                        <input type="text" class="form-control" placeholder="team member id" value="@ViewBag.UserName" readonly>
+
                     </div>
                 </div>
                 <div class="col-sm-6">

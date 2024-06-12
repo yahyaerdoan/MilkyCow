@@ -25,16 +25,16 @@ namespace MilkyCow.BusinessLayer.Concrete.ConcreteManager
         #region Create Product
         public string CreateProduct(CreateProductDto createProductDto)
         {
-            var categories = _serviceManager.Value.CategoryService.GetAll();
-            var category = categories.FirstOrDefault(c => c.CategoryId.Equals(createProductDto.CategoryId));
+            //var categories = _serviceManager.Value.CategoryService.GetAll();
+            //var category = categories.FirstOrDefault(c => c.CategoryId.Equals(createProductDto.CategoryId));
 
-            if (category == null)
-            {
-                return "Invalid Category.";
-            }
+            //if (category == null)
+            //{
+            //    return "Invalid Category.";
+            //}
 
             var product = _mapper.Map<Product>(createProductDto);
-            product.CategoryId = category.CategoryId;
+            //product.CategoryId = category.CategoryId;
 
             Add(product);
 

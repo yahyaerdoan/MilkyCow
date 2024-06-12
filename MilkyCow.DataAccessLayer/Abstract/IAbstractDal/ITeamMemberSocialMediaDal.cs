@@ -5,4 +5,6 @@ namespace MilkyCow.DataAccessLayer.Abstract.IAbstractDal
 {
     public interface ITeamMemberSocialMediaDal : IGenericRepository<TeamMemberSocialMedia>
     {
-    }  }
+        List<TeamMemberSocialMedia> GetTeamMemberSocialMediaListByTeamMemberId(int id);
+    }  
+}

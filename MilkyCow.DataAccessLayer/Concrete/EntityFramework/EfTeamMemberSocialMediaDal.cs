@@ -10,5 +10,11 @@ namespace MilkyCow.DataAccessLayer.Concrete.EntityFramework
         public EfTeamMemberSocialMediaDal(MilkyCowDbContext context) : base(context)
         {
         }
+
+        public List<TeamMemberSocialMedia> GetTeamMemberSocialMediaListByTeamMemberId(int id)
+        {
+            var values = _context.TeamMemberSocialMedias.Where(x=> x.TeamMemberId == id).ToList();
+            return values;
+        }
     }
 }
