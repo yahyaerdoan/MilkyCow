@@ -40,13 +40,27 @@ namespace MilkyCow.WebUserInterfaceLayer.Areas.MilkyAdmin.Controllers.Default
             }
             return View();
         }
+        #region Set Team Member Full Name And Id
+        private async Task SetTeamMemberFullNameAndIdAsync(int id)
+        {
+            var fullName = await _fullName.GetByIdAsync("TeamMembers/TeamMemberFullName", id);
+            if (fullName != null && !string.IsNullOrEmpty(fullName.FullName))
+            {
+                ViewBag.TeamMemberFullName = fullName.FullName;
+            }
+            else
+            {
+                ViewBag.TeamMemberFullName = "Unknown Team Member";
+            }
+        }
+
+        #endregion
 
         [HttpGet]
         public async Task<IActionResult> CreateTeamMemberSocialMedia(int id)
         {
-            var fullName = await _fullName.GetByIdAsync("TeamMembers/TeamMemberFullName", id);
-            ViewBag.TeamMemberFullName = fullName.FullName;
             ViewBag.TeamMemberId = id;
+            await SetTeamMemberFullNameAndIdAsync(id);
             return View();
         }
 
@@ -62,11 +76,23 @@ namespace MilkyCow.WebUserInterfaceLayer.Areas.MilkyAdmin.Controllers.Default
             return View();
         }
 
+        #region  Get Team Member Full Name
+        private async Task<string> GetTeamMemberFullNameAsync(int id)
+        {
+            var resultFullName = await _resultTeamMemberSocialMediaDto.GetByIdAsync("TeamMemberSocialMedias/TeamMemberSocialMediaByTeamMemberId", id);
+            if (resultFullName != null && resultFullName.TeamMember != null)
+            {
+                return $"{resultFullName.TeamMember.FirstName} {resultFullName.TeamMember.LastName}";
+            }
+            return "Unknown Team Member";
+        }
+
+        #endregion
+
         [HttpGet]
         public async Task<IActionResult> UpdateTeamMemberSocialMedia(int id)
         {
-            var resultFullName = await _resultTeamMemberSocialMediaDto.GetByIdAsync("TeamMemberSocialMedias/TeamMemberSocialMediaByTeamMemberId", id);
-            ViewBag.TeamMemberFullName = $"{resultFullName.TeamMember.FirstName} {resultFullName.TeamMember.LastName}";
+            ViewBag.TeamMemberFullName = await GetTeamMemberFullNameAsync(id);
             var values = await _updateTeamMemberSocialMediaDto.GetByIdAsync("TeamMemberSocialMedias/GetTeamMemberSocialMediaById", id);          
             return View(values);
         }
