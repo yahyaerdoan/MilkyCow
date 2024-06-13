@@ -3,6 +3,7 @@ using MilkyCow.BusinessLayer.Abstract.IAbstractService;
 using MilkyCow.BusinessLayer.Concrete.ConcreteManager;
 using MilkyCow.DataAccessLayer.Abstract.IAbstractDal;
 using MilkyCow.DataAccessLayer.Concrete.EntityFramework;
+using MilkyCow.DataTransferObjectLayer.Concrete.TeamMemberDtos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -65,6 +66,9 @@ namespace MilkyCow.BusinessLayer.Extentensions
 
             services.AddScoped<IWhyUsDetailDal, EfWhyUsDetailDal>();
             services.AddScoped<IWhyUsDetailService, WhyUsDetailManager>();
+
+            services.AddTransient<ResultTeamMemberFullNameDto>();
+
         }
     }
 }

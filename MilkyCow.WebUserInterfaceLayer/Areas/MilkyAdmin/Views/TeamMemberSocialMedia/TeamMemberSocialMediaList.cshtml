@@ -5,8 +5,7 @@
 }
 
 @{
-    int count = 0;
-    int teamMemberId = 0;
+    int count = 0; 
 }
 <div class="container-fluid">
     <div class="card-header">
@@ -32,16 +31,14 @@
             <tbody>
                 @foreach (var item in Model)
                 {
-                    count++;
-                    teamMemberId = item.TeamMemberId;
+                    count++;                  
                     <tr>
                         <td><b>@count</b></td>
                         <td>@item.TeamMemberSocialMediaId</td>
                         <td class="text-danger">@item.AccountName</td>
                         <td>@item.AccountUrl</td>
                         <td>@item.Icon</td>
-                        <td>@item.TeamMember.FirstName @item.TeamMember.LastName</td>
-                        @* <td>@ViewBag.UserName</td> *@
+                        <td>@item.TeamMember.FirstName @item.TeamMember.LastName</td>                       
                         <td>
                             @if (@item.Status)
                             {
@@ -54,8 +51,8 @@
                             }
                         </td>
                         <td>
-                            <a href="/MilkyAdmin/TeamMemberSocialMedia/UpdateTeamMemberSocialMedia/@item.TeamMemberId"
-                                    @* ?username=@ViewBag.UserName"*@  class="btn btn-outline-primary sm">Update</a>
+                            <a href="/MilkyAdmin/TeamMemberSocialMedia/UpdateTeamMemberSocialMedia/@item.TeamMemberSocialMediaId"
+                               class="btn btn-outline-primary sm">Update</a>
                         </td>
                         <td>
                             <a href="/MilkyAdmin/TeamMemberSocialMedia/DeleteTeamMemberSocialMedia/@item.TeamMemberSocialMediaId" class="btn btn-outline-danger sm">Delete</a>
@@ -65,7 +62,7 @@
             </tbody>
         </table>
         <div style="margin-top:1rem">
-            <a href="/MilkyAdmin/TeamMemberSocialMedia/CreateTeamMemberSocialMedia/@teamMemberId" class="btn btn-outline-primary col-md-12">Create New TeamMemberSocialMedia</a>
+            <a href="/MilkyAdmin/TeamMemberSocialMedia/CreateTeamMemberSocialMedia/@ViewBag.TeamMemberId" class="btn btn-outline-primary col-md-12">Create New TeamMemberSocialMedia</a>
         </div>
     </div>
 </div>

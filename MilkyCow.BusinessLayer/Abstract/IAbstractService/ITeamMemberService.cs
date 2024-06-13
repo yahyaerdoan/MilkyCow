@@ -5,5 +5,6 @@ namespace MilkyCow.BusinessLayer.Abstract.IAbstractService
 {
     public interface ITeamMemberService : IGenericService<TeamMember>
     {
+        string GetTeamMemberFullName(int id);
     }
 }

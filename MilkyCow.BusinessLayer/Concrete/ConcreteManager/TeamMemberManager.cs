@@ -35,6 +35,12 @@ namespace MilkyCow.BusinessLayer.Concrete.ConcreteManager
             return values;
         }
 
+        public string GetTeamMemberFullName(int id)
+        {
+            var values = _memberDal.GetTeamMemberFullName(id);
+            return values;
+        }
+
         public void Update(TeamMember entity)
         {
             _memberDal.Update(entity);

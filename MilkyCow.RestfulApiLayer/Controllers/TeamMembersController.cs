@@ -2,8 +2,12 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MilkyCow.BusinessLayer.Abstract.IServiceManager;
+using MilkyCow.DataTransferObjectLayer.Concrete.ProductDtos;
 using MilkyCow.DataTransferObjectLayer.Concrete.TeamMemberDtos;
 using MilkyCow.EntityLayer.Concrete;
+using Newtonsoft.Json;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace MilkyCow.RestfulApiLayer.Controllers
 {
@@ -13,22 +17,40 @@ namespace MilkyCow.RestfulApiLayer.Controllers
 	{
 		private readonly IServiceManager _ServiceManger;
 		private readonly IMapper _mapper;
+		private readonly ResultTeamMemberFullNameDto _resultTeamMemberFullNameDto;
 
-		public TeamMembersController(IMapper mapper, IServiceManager ServiceManger)
-		{
-			_mapper = mapper;
-			_ServiceManger = ServiceManger;
-		}
 
-		[HttpGet("TeamMemberList")]
+        public TeamMembersController(IMapper mapper, IServiceManager ServiceManger, ResultTeamMemberFullNameDto resultTeamMemberFullNameDto)
+        {
+            _mapper = mapper;
+            _ServiceManger = ServiceManger;
+            _resultTeamMemberFullNameDto = resultTeamMemberFullNameDto;
+        }
+
+        [HttpGet("TeamMemberList")]
 		public ActionResult TeamMemberList()
 		{
 			var values = _ServiceManger.TeamMemberService.GetAll();
 			var resultDtos = _mapper.Map<IEnumerable<ResultTeamMemberDto>>(values);
 			return Ok(resultDtos);
-		}
+		}      
 
-		[HttpGet("GetTeamMemberById/{id}")]
+        [HttpGet("TeamMemberFullName/{id}")]
+        public IActionResult GetTeamMemberFullName(int id)
+        {
+            var values = _ServiceManger.TeamMemberService.GetTeamMemberFullName(id);
+			//var fullname = new ResultTeamMemberFullNameDto()
+			//{
+			//	FullName = values.ToString(),
+			//};
+			 _resultTeamMemberFullNameDto.FullName = values;
+
+			return Ok(_resultTeamMemberFullNameDto);
+        }
+
+
+
+        [HttpGet("GetTeamMemberById/{id}")]
 		public ActionResult GetTeamMemberById(int id)
 		{
 			var values = _ServiceManger.TeamMemberService.GetById(id);

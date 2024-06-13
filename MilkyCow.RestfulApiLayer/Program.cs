@@ -6,6 +6,7 @@ using MilkyCow.DataTransferObjectLayer.AutoMapper.EntityDtoMappers;
 using MilkyCow.BusinessLayer.Abstract.IServiceManager;
 using MilkyCow.BusinessLayer.Concrete.ServiceManager;
 using System;
+using MilkyCow.DataTransferObjectLayer.Concrete.TeamMemberDtos;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,7 +16,6 @@ builder.Services.AddScoped<IServiceManager, ServiceManager>();
 builder.Services.AddScoped(provider =>
     new Lazy<IServiceManager>(() => provider.GetRequiredService<IServiceManager>()));
 builder.Services.ContainerDependencyInjection();
-
 builder.Services.AddAutoMapper(typeof(MappingProfile));
 
 

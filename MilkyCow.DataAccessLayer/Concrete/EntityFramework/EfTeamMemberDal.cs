@@ -10,5 +10,11 @@ namespace MilkyCow.DataAccessLayer.Concrete.EntityFramework
         public EfTeamMemberDal(MilkyCowDbContext context) : base(context)
         {
         }
+
+        public string GetTeamMemberFullName(int id)
+        {
+            var values = _context.TeamMembers.Find(id);
+            return String.Concat(values.FirstName + " " + values.LastName);          
+        }
     }
 }

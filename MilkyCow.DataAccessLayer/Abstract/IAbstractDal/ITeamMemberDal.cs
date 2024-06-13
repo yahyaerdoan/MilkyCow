@@ -5,5 +5,6 @@ namespace MilkyCow.DataAccessLayer.Abstract.IAbstractDal
 {
     public interface ITeamMemberDal : IGenericRepository<TeamMember>
     {
+        string GetTeamMemberFullName(int id);
     }
 }
