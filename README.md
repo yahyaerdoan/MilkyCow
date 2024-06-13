@@ -19,7 +19,7 @@ Completed this project by M&Y Yazılım Eğitim Akademi Danışmanlık and by Mu
 - Entity Framework
 - Postman
 - MSSQL
-
+---------------------------
 - RESTful API & Minimal API
 - DTO & AutoMapper
 - Dependency Injection
